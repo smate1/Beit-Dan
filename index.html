@@ -124,10 +124,7 @@
   <section class="shows">
     <div class="container">
       <div class="shows__items">
-        <article class="shows__item">
-          <div class="shows__visual">
-            <img class="shows__img" src="./images/shows-1.png" alt="Kids Hub">
-          </div>
+        <article class="shows__item" style="--shows-bg: url('./images/shows-1.png');">
           <div class="shows__body">
             <h3 class="shows__title">«Kids Hub»</h3>
             <div class="shows__info">
@@ -148,10 +145,7 @@
             </a>
           </div>
         </article>
-        <article class="shows__item">
-          <div class="shows__visual">
-            <img class="shows__img" src="./images/shows-2.png" alt="Канікулярна програма">
-          </div>
+        <article class="shows__item" style="--shows-bg: url('./images/shows-2.png');">
           <div class="shows__body">
             <h3 class="shows__title">Канікулярна програма</h3>
             <div class="shows__info">
@@ -172,10 +166,7 @@
             </a>
           </div>
         </article>
-        <article class="shows__item">
-          <div class="shows__visual">
-            <img class="shows__img" src="./images/shows-3.png" alt="Arayot Junior">
-          </div>
+        <article class="shows__item" style="--shows-bg: url('./images/shows-3.png');">
           <div class="shows__body">
             <h3 class="shows__title">Arayot Junior</h3>
             <div class="shows__info">
@@ -209,6 +200,10 @@
     <defs>
       <clipPath id="directions-img-clip" clipPathUnits="objectBoundingBox">
         <path d="M 0 0 H 1 V 1 H 0 Q 0.2 0.5 0 0 Z"></path>
+      </clipPath>
+      <!-- дзеркальна маска (вигин справа) для clubs -->
+      <clipPath id="clubs-img-clip-right" clipPathUnits="objectBoundingBox">
+        <path d="M 1 0 H 0 V 1 H 1 Q 0.8 0.5 1 0 Z"></path>
       </clipPath>
     </defs>
   </svg>
@@ -266,7 +261,9 @@
       </div>
       <div class="clubs__items">
         <div class="clubs__item">
-          <img class="clubs__item-img" src="./images/clubs-1.png">
+          <div class="clubs__img-wrapper">
+            <img class="clubs__item-img" src="./images/clubs-1.png" alt="">
+          </div>
           <div class="clubs__content">
             <h3 class="clubs__title">
               Програми для дітей!
@@ -288,74 +285,179 @@
                 Краще сполучення традиції та інновацій
               </li>
             </ul>
-            <button class="clubs__button" type="button">
-              <img src="./images/user.svg" alt="">
-              <span>Записатись</span>
-            </button>
+            <div class="clubs__bottom">
+              <div class="clubs__bottom-register">
+                <button class="clubs__button" type="button">
+                  <img src="./images/user.svg" alt="">
+                  <span>Записатись</span>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
         <div class="clubs__item">
           <div class="clubs__content">
             <h3 class="clubs__title">
-              Програми для дітей!
+              Програми для підлітків
             </h3>
             <ul class="clubs__list">
               <li class="clubs__list-item">
-                Вчимося граючи
+                Спілкуємося англійською
               </li>
               <li class="clubs__list-item">
-                Педагог – друг дитини
+                Знайомимося з єврейською традицією
               </li>
               <li class="clubs__list-item">
-                Комплексний розвиток дитини
+                Проектний менеджмент – реалізуємо проекти разом
               </li>
               <li class="clubs__list-item">
-                Партнерські стосунки з родинами
-              </li>
-              <li class="clubs__list-item">
-                Краще сполучення традиції та інновацій
+                Отримуємо міжнародний досвід на виїзних семінарах
               </li>
             </ul>
-            <button class="clubs__button" type="button">
-              <img src="./images/user.svg" alt="">
-              <span>Записатись</span>
-            </button>
+            <div class="clubs__bottom">
+              <div class="clubs__bottom-register">
+                <button class="clubs__button" type="button">
+                  <img src="./images/user.svg" alt="">
+                  <span>Записатись</span>
+                </button>
+              </div>
+            </div>
           </div>
-          <img class="clubs__item-img" src="./images/clubs-2.png">
+          <div class="clubs__img-wrapper">
+            <img class="clubs__item-img" src="./images/clubs-2.png" alt="">
+          </div>
         </div>
         <div class="clubs__item">
-          <img class="clubs__item-img" src="./images/clubs-3.png">
+          <div class="clubs__img-wrapper">
+            <img class="clubs__item-img" src="./images/clubs-3.png" alt="">
+          </div>
           <div class="clubs__content">
             <h3 class="clubs__title">
-              Програми для дітей!
+              Програми для дорослих
             </h3>
             <ul class="clubs__list">
               <li class="clubs__list-item">
-                Вчимося граючи
+                Святкуємо всією сім’єю
               </li>
               <li class="clubs__list-item">
-                Педагог – друг дитини
+                Зберігаємо зв’язок поколінь
               </li>
               <li class="clubs__list-item">
-                Комплексний розвиток дитини
+                Проводимо разом сімейні виїзні семінари і вікенди
               </li>
               <li class="clubs__list-item">
-                Партнерські стосунки з родинами
-              </li>
-              <li class="clubs__list-item">
-                Краще сполучення традиції та інновацій
+                Реалізуємо себе в аматорському театрі для дорослих
               </li>
             </ul>
-            <button class="clubs__button" type="button">
-              <img src="./images/user.svg" alt="">
-              <span>Записатись</span>
-            </button>
+            <div class="clubs__bottom">
+              <div class="clubs__bottom-register">
+                <button class="clubs__button" type="button">
+                  <img src="./images/user.svg" alt="">
+                  <span>Записатись</span>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-
+  <section class="news">
+    <div class="container">
+      <div class="news__top">
+        <img class="news__img" src="./images/globe.svg">
+        <h2 class="news__top-text">
+          Останні новини та події “Бейт Дан”
+        </h2>
+      </div>
+      <div class="news__inner">
+        <div class="news__content">
+          <div class="news__body">
+            <h3 class="news__title">
+              Міжнародна акція «Good Jam Day» триває
+            </h3>
+            <p class="news__text">
+              Участь у Міжнародній акції «Good Jam Day» триває.?Сьогодні наші волонтери прикрашали баночки з яблучним
+              варенням...
+            </p>
+            <div class="news__footer">
+              <div class="news__info">
+                <div class="news__info-date">
+                  <img src="./images/calendar-date.svg" alt="">
+                  <span>Жов, 17, 2025</span>
+                </div>
+                <div class="news__info-views">
+                  <img src="./images/views.svg" alt="">
+                  <span>3502</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="news__bottom-right">
+            <button class="news__union-btn" type="button" aria-label="Детальніше">
+              <img src="./images/union.svg" alt="">
+            </button>
+          </div>
+        </div>
+        <div class="news__items">
+          <div class="news__item">
+            <div class="news__category">
+              Волонтерська платформа
+            </div>
+            <div class="news__name">
+              Всеукраїнська акція «Плед тисячі сердець»
+            </div>
+            <div class="news__info">
+              <div class="news__info-date">
+                <img src="./images/calendar-lighter.svg" alt="">
+                <span>Жов, 17, 2025</span>
+              </div>
+              <div class="news__info-views">
+                <img src="./images/views-lighter.svg" alt="">
+                <span>3502</span>
+              </div>
+            </div>
+          </div>
+          <div class="news__item">
+            <div class="news__category">
+              Без категорії
+            </div>
+            <div class="news__name">
+              Хаг Суккот самеах!
+            </div>
+            <div class="news__info">
+              <div class="news__info-date">
+                <img src="./images/calendar-lighter.svg" alt="">
+                <span>Жов, 17, 2025</span>
+              </div>
+              <div class="news__info-views">
+                <img src="./images/views-lighter.svg" alt="">
+                <span>3502</span>
+              </div>
+            </div>
+          </div>
+          <div class="news__item">
+            <div class="news__category">
+              Волонтерська платформа
+            </div>
+            <div class="news__name">
+              Міжнародна акція «Good Jam Day» триває
+            </div>
+            <div class="news__info">
+              <div class="news__info-date">
+                <img src="./images/calendar-lighter.svg" alt="">
+                <span>Жов, 17, 2025</span>
+              </div>
+              <div class="news__info-views">
+                <img src="./images/views-lighter.svg" alt="">
+                <span>3502</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
 
