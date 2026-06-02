@@ -751,3 +751,32 @@ body {
 	object-position: left center;
 }
 
+.clubs {
+}
+
+.clubs__top {
+  display: flex;
+  align-items: center;
+}
+.clubs__img {
+}
+.clubs__top-text {
+}
+.clubs__items {
+}
+.clubs__item {
+  display: flex;align-items: center;
+  justify-content: space-between;
+}
+.clubs__item-img {
+}
+.clubs__content {
+}
+.clubs__title {
+}
+.clubs__list {
+}
+.clubs__list-item {
+}
+.clubs__button {
+}
