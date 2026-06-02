@@ -1506,8 +1506,8 @@ body {
 .join__content {
 	padding-top: 53px;
 	position: relative;
-  max-width: 980px;
-  margin: 0 auto;
+	max-width: 980px;
+	margin: 0 auto;
 }
 
 .join__content > * {
@@ -1709,4 +1709,494 @@ body {
 	font-weight: 500;
 	line-height: normal;
 	text-transform: uppercase;
+}
+
+.reviews {
+	padding: 40px 15px 70px;
+	position: relative;
+	overflow: visible;
+}
+
+.reviews__inner {
+	position: relative;
+	max-width: 1440px;
+	margin: 0 auto;
+	min-height: 630px;
+}
+
+.reviews__title {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 2;
+	margin: 0;
+	transform: translate(-50%, -50%);
+	color: var(--Dark-green, #054e05);
+	text-align: center;
+	font-family: Montserrat, sans-serif;
+	font-size: 54px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	pointer-events: none;
+}
+
+.reviews__items {
+	position: relative;
+	min-height: 630px;
+	overflow: visible;
+}
+
+.reviews__item {
+	position: absolute;
+	z-index: 1;
+	display: flex;
+	align-items: flex-end;
+	gap: 0;
+	max-width: 340px;
+}
+
+.reviews__item:nth-child(1) {
+	top: 0;
+	left: 50%;
+	transform: translateX(-77%);
+}
+
+.reviews__item:nth-child(2) {
+	top: 20%;
+	right: -5%;
+	flex-direction: row-reverse;
+}
+
+.reviews__item:nth-child(3) {
+	top: 20%;
+	left: -5%;
+	max-width: 400px;
+}
+
+.reviews__item:nth-child(4) {
+	top: 50%;
+	right: -5%;
+	flex-direction: row-reverse;
+}
+
+.reviews__item:nth-child(5) {
+	top: 50%;
+	left: -5%;
+}
+
+.reviews__item:nth-child(6) {
+	bottom: 5%;
+	right: 5%;
+	flex-direction: row-reverse;
+}
+
+.reviews__item:nth-child(7) {
+	bottom: 5%;
+	left: 10%;
+}
+
+.reviews__img {
+	display: block;
+	position: relative;
+	z-index: 2;
+	flex-shrink: 0;
+	width: 110px;
+	height: 110px;
+}
+
+/* виїмка знизу зліва (border-radius … 0) — аватар у нижньому лівому куті */
+.reviews__item:nth-child(1) .reviews__img,
+.reviews__item:nth-child(3) .reviews__img,
+.reviews__item:nth-child(5) .reviews__img,
+.reviews__item:nth-child(7) .reviews__img {
+	align-self: flex-end;
+	margin-right: 10px;
+	margin-bottom: 8px;
+}
+
+/* виїмка знизу справа (border-radius … 0 55px) — аватар у нижньому правому куті */
+.reviews__item:nth-child(2) .reviews__img,
+.reviews__item:nth-child(4) .reviews__img,
+.reviews__item:nth-child(6) .reviews__img {
+	align-self: flex-end;
+	margin-left: 10px;
+	margin-bottom: 8px;
+}
+
+.reviews__info {
+	position: relative;
+	flex: 1;
+	min-width: 0;
+	padding: 16px 26px;
+	min-width: 400px;
+	background: var(--Grey, #ebf4ee);
+}
+
+.reviews__item:nth-child(1) > .reviews__info {
+	border-radius: 55px 55px 55px 0;
+}
+.reviews__item:nth-child(2) > .reviews__info {
+	border-radius: 55px 55px 0px 55px;
+}
+.reviews__item:nth-child(3) > .reviews__info {
+	border-radius: 55px 55px 55px 0px;
+}
+.reviews__item:nth-child(4) > .reviews__info {
+	border-radius: 55px 55px 0px 55px;
+}
+.reviews__item:nth-child(5) > .reviews__info {
+	border-radius: 55px 55px 55px 0px;
+}
+.reviews__item:nth-child(6) > .reviews__info {
+	border-radius: 55px 55px 0px 55px;
+}
+.reviews__item:nth-child(7) > .reviews__info {
+	border-radius: 55px 55px 55px 0;
+}
+
+/* reviews__info справа від аватара — декор знизу зліва */
+.reviews__info::before {
+	content: '';
+	position: absolute;
+	bottom: -1px;
+	left: -1px;
+	width: 55px;
+	height: 55px;
+	background-image: url('../images/review-decor.svg');
+	background-repeat: no-repeat;
+	background-size: contain;
+	transform: scaleX(-1);
+	pointer-events: none;
+}
+
+/* reviews__info зліва від аватара (row-reverse) — декор знизу справа */
+.reviews__item:nth-child(2) .reviews__info::before,
+.reviews__item:nth-child(4) .reviews__info::before,
+.reviews__item:nth-child(6) .reviews__info::before {
+	left: auto;
+	right: -53px;
+	bottom: 0px;
+	transform: rotate(90deg);
+}
+.reviews__item:nth-child(1) .reviews__info::before,
+.reviews__item:nth-child(3) .reviews__info::before,
+.reviews__item:nth-child(5) .reviews__info::before,
+.reviews__item:nth-child(7) .reviews__info::before {
+	bottom: 0px;
+	transform: rotate(0deg);
+	left: -54px;
+}
+.reviews__item:nth-child(2) .reviews__info,
+.reviews__item:nth-child(3) .reviews__info,
+.reviews__item:nth-child(6) .reviews__info,
+.reviews__item:nth-child(7) .reviews__info {
+	position: relative;
+	overflow: visible;
+}
+
+/* Коля */
+.reviews__item:nth-child(2) .reviews__info::after {
+	content: '';
+	position: absolute;
+	z-index: 0;
+	display: block;
+	pointer-events: none;
+	background-image: url('../images/arrow-1.svg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 75.496px;
+	height: 88.968px;
+	left: -100px;
+	bottom: -50px;
+}
+
+/* Катерина */
+.reviews__item:nth-child(3) .reviews__info::after {
+	content: '';
+	position: absolute;
+	z-index: 0;
+	display: block;
+	pointer-events: none;
+	background-image: url('../images/arrow-4.svg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 184.205px;
+	height: 53.284px;
+	right: -178px;
+	transform: rotate(8deg);
+	top: 100px;
+}
+
+/* Арсен */
+.reviews__item:nth-child(6) .reviews__info::after {
+	content: '';
+	position: absolute;
+	z-index: 0;
+	display: block;
+	pointer-events: none;
+	background-image: url('../images/arrow-2.svg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 178.752px;
+	height: 74px;
+	top: -70%;
+	left: -10%;
+}
+
+/* Анжеліка */
+.reviews__item:nth-child(7) .reviews__info::after {
+	content: '';
+	position: absolute;
+	z-index: 0;
+	display: block;
+	pointer-events: none;
+	background-image: url('../images/arrow-3.svg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 104.177px;
+	height: 130.816px;
+	top: -85px;
+	left: 115%;
+	transform: translateX(-50%);
+}
+
+.reviews__name {
+	color: var(--Dark-green, #054e05);
+	font-family: Montserrat;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 32px; /* 177.778% */
+	margin-bottom: 6px;
+}
+
+.reviews__text {
+	color: var(--Dark-green, #054e05);
+	font-family: Montserrat;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+}
+
+.footer {
+	padding: 38px 0 0;
+	border-radius: 16px 16px 0 0;
+	background: var(
+		--Green,
+		linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%),
+		#117f1c
+	);
+}
+
+.footer__top {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 60px;
+}
+.footer__logo {
+	display: block;
+	transition:
+		opacity 0.25s ease,
+		transform 0.25s ease;
+}
+
+.footer__logo:hover {
+	opacity: 0.9;
+	transform: scale(1.02);
+}
+
+.footer__logo:focus-visible {
+	outline: 2px solid var(--Yellow, #d3f445);
+	outline-offset: 4px;
+	border-radius: 4px;
+}
+
+.footer__logo-img {
+	display: block;
+}
+
+.footer__socials {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+}
+
+.footer__social {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 6px;
+	border-radius: 8px;
+	transition:
+		background-color 0.25s ease,
+		transform 0.25s ease;
+}
+
+.footer__social:hover {
+	background-color: rgba(255, 255, 255, 0.14);
+	transform: translateY(-2px);
+}
+
+.footer__social:active {
+	transform: translateY(0);
+}
+
+.footer__social:focus-visible {
+	outline: 2px solid var(--Yellow, #d3f445);
+	outline-offset: 3px;
+}
+
+.footer__social img {
+	display: block;
+	transition: opacity 0.25s ease;
+}
+
+.footer__social:hover img {
+	opacity: 0.85;
+}
+
+.footer__donate {
+	position: relative;
+	isolation: isolate;
+	overflow: hidden;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	padding: 20px 33px;
+	gap: 11px;
+	border-radius: 16px;
+	border: 3px solid var(--White, #fff);
+	cursor: pointer;
+	color: var(--White, #fff);
+	font-family: Montserrat, sans-serif;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	text-transform: uppercase;
+	background: var(
+		--Green,
+		linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%),
+		#117f1c
+	);
+	box-shadow: 0 6px 0 0 rgba(0, 0, 0, 0.25);
+	transition:
+		border-color 0.4s ease,
+		box-shadow 0.4s ease;
+}
+
+.footer__donate::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	z-index: 0;
+	border-radius: inherit;
+	opacity: 0;
+	background: linear-gradient(
+		120deg,
+		rgba(211, 244, 69, 0.28) 0%,
+		rgba(255, 255, 255, 0.14) 45%,
+		rgba(169, 195, 55, 0.22) 100%
+	);
+	transition: opacity 0.4s ease;
+	pointer-events: none;
+}
+
+.footer__donate > * {
+	position: relative;
+	z-index: 1;
+}
+
+.footer__donate:hover {
+	border-color: var(--Yellow, #d3f445);
+	box-shadow:
+		0 6px 0 0 rgba(0, 0, 0, 0.25),
+		0 0 24px rgba(211, 244, 69, 0.4),
+		inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.footer__donate:hover::before {
+	opacity: 1;
+}
+
+.footer__donate:active {
+	box-shadow:
+		0 6px 0 0 rgba(0, 0, 0, 0.32),
+		inset 0 2px 10px rgba(0, 0, 0, 0.18);
+}
+
+.footer__donate:active::before {
+	opacity: 0.75;
+}
+
+.footer__donate:focus-visible {
+	outline: 2px solid var(--Yellow, #d3f445);
+	outline-offset: 3px;
+}
+.footer__inner {
+	display: flex;
+	justify-content: space-between;
+}
+.footer__list {
+	margin-bottom: 52px;
+}
+.footer__list-title {
+	color: var(--Yellow, #d3f445);
+	font-family: Montserrat;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 32px; /* 160% */
+	margin-bottom: 12px;
+}
+.footer__list-item + .footer__list-item {
+	margin-top: 14px;
+}
+.footer__list-link {
+	display: inline-block;
+	color: var(--White, #fff);
+	font-family: Montserrat, sans-serif;
+	font-size: 17px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	text-decoration: none;
+	transition: color 0.25s ease;
+}
+
+.footer__list-link:hover {
+	color: var(--Yellow, #d3f445);
+}
+
+.footer__list-link:focus-visible {
+	outline: 2px solid var(--Yellow, #d3f445);
+	outline-offset: 3px;
+	border-radius: 2px;
+}
+.footer__bottom {
+	padding: 30px 0;
+	border-radius: 16px 16px 0 0;
+	background: var(--Dark-green, #054e05);
+}
+.footer__bottom-inner{
+	display: flex;
+	align-items: center;
+}
+.footer__bottom-text {
+	color: var(--Yellow, #d3f445);
+	font-family: Montserrat;
+	font-size: 17px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 41px; /* 241.176% */
+}
+.footer__bottom-img {
+  margin-left: 135px;
 }
