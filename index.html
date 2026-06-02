@@ -30,7 +30,7 @@
         <nav class="nav">
           <ul class="nav__list">
             <li class="nav__item">
-              <a class="nav__link" href="#">Про нас</a>
+              <a class="nav__link" href="#about">Про нас</a>
             </li>
             <li class="nav__item">
               <a class="nav__link" href="#programs">Програми</a>
@@ -84,7 +84,7 @@
       </div>
     </div>
   </section>
-  <section class="junior">
+  <section class="junior" id="events">
     <div class="container">
       <div class="junior__description">
         <img class="junior__description-img" src="./images/calendar.svg" alt="">
@@ -217,7 +217,7 @@
       </clipPath>
     </defs>
   </svg>
-  <section class="directions">
+  <section class="directions" id="about">
     <div class="container">
       <div class="directions__inner">
         <div class="directions__content">
@@ -261,7 +261,7 @@
       </div>
     </div>
   </section>
-  <section class="clubs">
+  <section class="clubs" id="programs">
     <div class="container">
       <div class="clubs__top">
         <img class="clubs__img" src="./images/smile.svg">
@@ -468,7 +468,7 @@
       </div>
     </div>
   </section>
-  <section class="rent">
+  <section class="rent" id="rent">
     <div class="container">
       <div class="rent__top">
         <img class="rent__img" src="./images/rent.svg" alt="">
@@ -486,7 +486,7 @@
           <div class="rent__btn-wrap">
             <a class="rent__btn" href="#">
               <img src="./images/eye.svg" alt="">
-              <span>Замовити оренду</span>
+              <span>Замовити</span>
             </a>
           </div>
         </article>
@@ -502,7 +502,7 @@
           <div class="rent__btn-wrap">
             <a class="rent__btn" href="#">
               <img src="./images/eye.svg" alt="">
-              <span>Замовити оренду</span>
+              <span>Замовити</span>
             </a>
           </div>
         </article>
@@ -510,7 +510,7 @@
         <article class="rent__item"
           style="background-image: url('./images/rent-3.png'); background-repeat: no-repeat; background-position: center; background-size: cover;">
           <div class="rent__body">
-            <h3 class="rent__title-card">Спортивний зал воренду</h3>
+            <h3 class="rent__title-card">Спортивний зал в оренду</h3>
             <div class="rent__info">
               Площа 298,4 кв. м.
             </div>
@@ -518,14 +518,14 @@
           <div class="rent__btn-wrap">
             <a class="rent__btn" href="#">
               <img src="./images/eye.svg" alt="">
-              <span>Замовити оренду</span>
+              <span>Замовити</span>
             </a>
           </div>
         </article>
       </div>
     </div>
   </section>
-  <section class="join">
+  <section class="join" id="volunteering">
     <div class="join__wrapper">
       <div class="container">
         <div class="join__content">
@@ -548,10 +548,12 @@
   </section>
   <section class="reviews">
     <div class="reviews__inner">
-      <h2 class="reviews__title">
-        Відгуки <br>
-        наших гостей
-      </h2>
+      <div class="reviews__top">
+        <h2 class="reviews__title">
+          Відгуки <br>
+          наших гостей
+        </h2>
+      </div>
       <div class="reviews__items">
         <div class="reviews__item">
           <img class="reviews__img" src="./images/maxim.svg" alt="">
@@ -619,12 +621,13 @@
           </div>
         </div>
       </div>
+      <div class="reviews__dots" role="tablist" aria-label="Відгуки"></div>
     </div>
   </section>
   <footer class="footer">
     <div class="container">
       <div class="footer__top">
-        <a class="footer__logo" href="#">
+        <a class="footer__logo" href="index.html">
           <img class="footer__logo-img" src="./images/footer-logo.png" alt="">
         </a>
         <div class="footer__socials">
@@ -663,16 +666,16 @@
             Про нас
           </p>
           <li class="footer__list-item">
-            <a class="footer__list-link" href="#">Місія</a>
+            <a class="footer__list-link" href="#about">Місія</a>
           </li>
           <li class="footer__list-item">
-            <a class="footer__list-link" href="#">Цінності</a>
+            <a class="footer__list-link" href="#about">Цінності</a>
           </li>
           <li class="footer__list-item">
-            <a class="footer__list-link" href="#">Команда</a>
+            <a class="footer__list-link" href="#about">Команда</a>
           </li>
           <li class="footer__list-item">
-            <a class="footer__list-link" href="#">Партнери</a>
+            <a class="footer__list-link" href="#about">Партнери</a>
           </li>
         </ul>
         <ul class="footer__list">
@@ -680,10 +683,10 @@
             Програми
           </p>
           <li class="footer__list-item">
-            <a class="footer__list-link" href="#">Для дорослих</a>
+            <a class="footer__list-link" href="#programs">Для дорослих</a>
           </li>
           <li class="footer__list-item">
-            <a class="footer__list-link" href="#">Для дітей</a>
+            <a class="footer__list-link" href="#programs">Для дітей</a>
           </li>
         </ul>
         <ul class="footer__list">
@@ -701,7 +704,7 @@
             Волонтерська платформа
           </p>
           <li class="footer__list-item">
-            <a class="footer__list-link" href="#">Про волонтерів і проекти</a>
+            <a class="footer__list-link" href="#volunteering">Про волонтерів і проекти</a>
           </li>
         </ul>
       </div>

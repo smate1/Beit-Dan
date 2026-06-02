@@ -59,6 +59,20 @@
 		if (document.body.classList.contains('no-scroll')) unlockScroll();
 	};
 
+	const getHeaderOffset = () => {
+		const offset = parseInt(
+			getComputedStyle(document.documentElement).getPropertyValue('--header-offset'),
+			10,
+		);
+		return Number.isFinite(offset) ? offset : header.offsetHeight;
+	};
+
+	const scrollToSection = (target) => {
+		const top =
+			target.getBoundingClientRect().top + getScrollPosition() - getHeaderOffset();
+		window.scrollTo({ top, left: 0, behavior: 'smooth' });
+	};
+
 	const openMenu = () => {
 		if (isMobileMenu()) {
 			setHeaderOffset();
@@ -78,7 +92,30 @@
 	});
 
 	menu.querySelectorAll('.nav__link').forEach((link) => {
-		link.addEventListener('click', closeMenu);
+		link.addEventListener('click', (event) => {
+			const href = link.getAttribute('href');
+			if (!href?.startsWith('#')) {
+				closeMenu();
+				return;
+			}
+
+			const target = document.getElementById(href.slice(1));
+			if (!target) {
+				closeMenu();
+				return;
+			}
+
+			if (!header.classList.contains('header--open')) return;
+
+			event.preventDefault();
+			closeMenu();
+
+			requestAnimationFrame(() => {
+				requestAnimationFrame(() => {
+					scrollToSection(target);
+				});
+			});
+		});
 	});
 
 	document.addEventListener('keydown', (event) => {
@@ -95,4 +132,155 @@
 	});
 
 	setHeaderOffset();
+})();
+
+(function () {
+	const REVIEWS_BREAKPOINT = 1100;
+	const AUTOPLAY_DELAY = 5000;
+	const ITEMS_PER_SLIDE = 2;
+
+	const section = document.querySelector('.reviews');
+	if (!section) return;
+
+	const itemsWrap = section.querySelector('.reviews__items');
+	const dotsWrap = section.querySelector('.reviews__dots');
+	const items = [...section.querySelectorAll('.reviews__item')];
+
+	if (!itemsWrap || !dotsWrap || !items.length) return;
+
+	let slides = [];
+	let current = 0;
+	let timer = null;
+	let enabled = false;
+
+	const isSlider = () => window.innerWidth <= REVIEWS_BREAKPOINT;
+	const prefersReducedMotion = () =>
+		window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+	const stopAutoplay = () => {
+		if (timer) clearInterval(timer);
+		timer = null;
+	};
+
+	const startAutoplay = () => {
+		stopAutoplay();
+		if (!enabled || prefersReducedMotion()) return;
+		timer = setInterval(() => {
+			goTo(current + 1);
+		}, AUTOPLAY_DELAY);
+	};
+
+	const updateDots = () => {
+		dotsWrap.querySelectorAll('.reviews__dot').forEach((dot, index) => {
+			const isActive = index === current;
+			dot.classList.toggle('is-active', isActive);
+			dot.setAttribute('aria-selected', isActive ? 'true' : 'false');
+			dot.tabIndex = isActive ? 0 : -1;
+		});
+	};
+
+	const goTo = (index) => {
+		if (!slides.length) return;
+
+		current = (index + slides.length) % slides.length;
+
+		slides.forEach((slide, slideIndex) => {
+			const isActive = slideIndex === current;
+			slide.classList.toggle('is-active', isActive);
+			slide.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+		});
+
+		updateDots();
+	};
+
+	const buildSlides = () => {
+		itemsWrap.innerHTML = '';
+		slides = [];
+
+		for (let i = 0; i < items.length; i += ITEMS_PER_SLIDE) {
+			const slide = document.createElement('div');
+			slide.className = 'reviews__slide';
+			items.slice(i, i + ITEMS_PER_SLIDE).forEach((item) => {
+				slide.appendChild(item);
+			});
+			itemsWrap.appendChild(slide);
+			slides.push(slide);
+		}
+	};
+
+	const destroySlides = () => {
+		itemsWrap.innerHTML = '';
+		items.forEach((item) => {
+			item.classList.remove('is-active');
+			item.removeAttribute('aria-hidden');
+			itemsWrap.appendChild(item);
+		});
+		slides = [];
+	};
+
+	const buildDots = () => {
+		dotsWrap.innerHTML = '';
+
+		slides.forEach((slide, index) => {
+			const names = [...slide.querySelectorAll('.reviews__name')]
+				.map((nameEl) => nameEl.textContent.trim())
+				.filter(Boolean)
+				.join(', ');
+			const dot = document.createElement('button');
+			dot.type = 'button';
+			dot.className = 'reviews__dot';
+			dot.setAttribute('role', 'tab');
+			dot.setAttribute(
+				'aria-label',
+				names ? `Відгуки: ${names}` : `Слайд ${index + 1}`,
+			);
+			dot.addEventListener('click', () => {
+				goTo(index);
+				startAutoplay();
+			});
+			dotsWrap.appendChild(dot);
+		});
+	};
+
+	const enable = () => {
+		if (enabled) return;
+		enabled = true;
+		section.classList.add('reviews--slider');
+		itemsWrap.setAttribute('aria-live', 'polite');
+		buildSlides();
+		buildDots();
+		goTo(current);
+		startAutoplay();
+	};
+
+	const disable = () => {
+		if (!enabled) return;
+		enabled = false;
+		section.classList.remove('reviews--slider');
+		stopAutoplay();
+		itemsWrap.removeAttribute('aria-live');
+		destroySlides();
+		dotsWrap.innerHTML = '';
+		current = 0;
+	};
+
+	const update = () => {
+		if (isSlider()) enable();
+		else disable();
+	};
+
+	section.addEventListener('mouseenter', stopAutoplay);
+	section.addEventListener('mouseleave', startAutoplay);
+	section.addEventListener('focusin', stopAutoplay);
+	section.addEventListener('focusout', (event) => {
+		if (!section.contains(event.relatedTarget)) startAutoplay();
+	});
+
+	document.addEventListener('visibilitychange', () => {
+		if (document.hidden) stopAutoplay();
+		else startAutoplay();
+	});
+
+	window.addEventListener('resize', update);
+	update();
 })();
