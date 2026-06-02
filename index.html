@@ -20,41 +20,49 @@
       <a class="logo" href="index.html">
         <img class="logo__img" src="./images/logo.png" alt="logo">
       </a>
-      <nav class="nav">
-        <ul class="nav__list">
-          <li class="nav__item">
-            <a class="nav__link" href="#">Про нас</a>
-          </li>
-          <li class="nav__item">
-            <a class="nav__link" href="#programs">Програми</a>
-          </li>
-          <li class="nav__item">
-            <a class="nav__link" href="#events">Заходи</a>
-          </li>
-          <li class="nav__item">
-            <a class="nav__link" href="#rent">Оренда</a>
-          </li>
-          <li class="nav__item">
-            <a class="nav__link" href="#volunteering">Волонтерська платформа</a>
-          </li>
-        </ul>
-      </nav>
-      <div class="header__right">
-        <div class="header__socials">
-          <a class="header__social" href="#">
-            <img src="./images/instagram.svg" alt="">
-          </a>
-          <a class="header__social" href="#">
-            <img src="./images/facebook.svg" alt="">
-          </a>
-          <a class="header__social" href="#">
-            <img src="./images/telegram.svg" alt="">
-          </a>
+      <button class="header__burger" type="button" aria-label="Відкрити меню" aria-expanded="false"
+        aria-controls="header-menu">
+        <span class="header__burger-line"></span>
+        <span class="header__burger-line"></span>
+        <span class="header__burger-line"></span>
+      </button>
+      <div class="header__menu" id="header-menu">
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a class="nav__link" href="#">Про нас</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#programs">Програми</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#events">Заходи</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#rent">Оренда</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#volunteering">Волонтерська платформа</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header__right">
+          <div class="header__socials">
+            <a class="header__social" href="#">
+              <img src="./images/instagram.svg" alt="Instagram">
+            </a>
+            <a class="header__social" href="#">
+              <img src="./images/facebook.svg" alt="Facebook">
+            </a>
+            <a class="header__social" href="#">
+              <img src="./images/telegram.svg" alt="Telegram">
+            </a>
+          </div>
+          <button class="header__donate" type="button">
+            <img src="./images/donate.svg" alt="">
+            <span>Донат</span>
+          </button>
         </div>
-        <button class="header__donate">
-          <img src="./images/donate.svg" alt="">
-          <span>Донат</span>
-        </button>
       </div>
     </div>
   </header>
@@ -95,25 +103,27 @@
             Заняття проводитимуть ще недавні юніори, а сьогодні лідери підліткового клубу «Арайот»!
           </p>
         </div>
-        <div class="junior__bottom">
-          <div class="junior__bottom-left">
-            <div class="junior__bottom-register">
+        <div class="junior__footer">
+          <div class="junior__footer-start">
+            <div class="junior__btn-wrap">
               <button class="junior__button" type="button">
                 <img src="./images/user.svg" alt="">
                 <span>Записатись</span>
               </button>
             </div>
-            <div class="junior__bottom-calendar">
-              <img src="./images/calendar-date.svg" alt="">
-              <span>Жов, 17, 2025</span>
-            </div>
-            <div class="junior__bottom-time">
-              <img src="./images/clock.svg" alt="">
-              <span>12:45</span>
+            <div class="junior__info">
+              <div class="junior__date">
+                <img src="./images/calendar-date.svg" alt="">
+                <span>Жов, 17, 2025</span>
+              </div>
+              <div class="junior__time">
+                <img src="./images/clock.svg" alt="">
+                <span>12:45</span>
+              </div>
             </div>
           </div>
-          <div class="junior__bottom-right">
-            <button class="junior__union-btn">
+          <div class="junior__union-wrap">
+            <button class="junior__union-btn" type="button">
               <img src="./images/union.svg" alt="">
             </button>
           </div>
