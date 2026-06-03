@@ -50,9 +50,8 @@ body {
 }
 .header__inner {
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
-	gap: 24px;
+	gap: 82px;
 	padding: 12px 40px;
 }
 
@@ -71,8 +70,6 @@ body {
 	display: flex;
 	flex: 1;
 	align-items: center;
-	justify-content: space-between;
-	gap: 24px;
 	min-width: 0;
 }
 
@@ -126,6 +123,9 @@ body {
 }
 
 .nav {
+	flex: 1;
+	display: flex;
+	justify-content: center;
 	min-width: 0;
 }
 
@@ -172,6 +172,7 @@ body {
 }
 
 .header__right {
+	flex-shrink: 0;
 	display: flex;
 	align-items: center;
 	border-radius: 16px;
@@ -422,6 +423,11 @@ body {
 		display: flex;
 		width: 44px;
 		height: 44px;
+	}
+
+	.nav {
+		flex: none;
+		display: block;
 	}
 
 	.header__menu {
@@ -1362,7 +1368,6 @@ body {
 	font-weight: 700;
 	line-height: normal;
 	text-transform: capitalize;
-
 }
 .rent__info {
 	color: var(--Black, #000);
@@ -4341,7 +4346,9 @@ body {
 		border-radius: 50%;
 		background: #c5d9cb;
 		cursor: pointer;
-		transition: background 0.25s ease, transform 0.25s ease;
+		transition:
+			background 0.25s ease,
+			transform 0.25s ease;
 	}
 
 	.reviews__dot.is-active {
@@ -4928,7 +4935,7 @@ body {
 	.footer__inner {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 		row-gap: clamp(20px, 4.5vw, 28px);
-    gap: 50px;
+		gap: 50px;
 	}
 
 	.footer__list {
