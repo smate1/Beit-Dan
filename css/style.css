@@ -4959,3 +4959,21 @@ body {
 		line-height: 1.5;
 	}
 }
+
+@media (max-width: 380px) {
+	.footer__bottom-inner {
+		flex-direction: column-reverse;
+		align-items: center;
+		justify-content: center;
+		gap: 12px;
+	}
+
+	.footer__bottom-text {
+		flex: none;
+		text-align: center;
+	}
+
+	.footer__bottom-img {
+		margin-left: 0;
+	}
+}
