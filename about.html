@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ua">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Про нас — Beit Dan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="header__inner">
+      <a class="logo" href="index.html">
+        <img class="logo__img" src="./images/logo.png" alt="logo">
+      </a>
+      <button class="header__burger" type="button" aria-label="Відкрити меню" aria-expanded="false"
+        aria-controls="header-menu">
+        <span class="header__burger-line"></span>
+        <span class="header__burger-line"></span>
+        <span class="header__burger-line"></span>
+      </button>
+      <div class="header__menu" id="header-menu">
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item nav__item--dropdown">
+              <a class="nav__link" href="#about">Про нас</a>
+              <ul class="nav__dropdown">
+                <li class="nav__dropdown-item">
+                  <a class="nav__dropdown-link" href="#about">Місія</a>
+                </li>
+                <li class="nav__dropdown-item">
+                  <a class="nav__dropdown-link" href="#about">Цінності</a>
+                </li>
+                <li class="nav__dropdown-item">
+                  <a class="nav__dropdown-link" href="#about">Команда</a>
+                </li>
+                <li class="nav__dropdown-item">
+                  <a class="nav__dropdown-link" href="#about">Партнери</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav__item nav__item--dropdown">
+              <a class="nav__link" href="#programs">Програми</a>
+              <ul class="nav__dropdown">
+                <li class="nav__dropdown-item">
+                  <a class="nav__dropdown-link" href="#programs">Для дорослих</a>
+                </li>
+                <li class="nav__dropdown-item">
+                  <a class="nav__dropdown-link" href="#programs">Для дітей</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#events">Заходи</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#rent">Оренда</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#volunteering">Волонтерська платформа</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header__right">
+          <div class="header__socials">
+            <a class="header__social" href="#">
+              <img src="./images/instagram.svg" alt="Instagram">
+            </a>
+            <a class="header__social" href="#">
+              <img src="./images/facebook.svg" alt="Facebook">
+            </a>
+            <a class="header__social" href="#">
+              <img src="./images/telegram.svg" alt="Telegram">
+            </a>
+          </div>
+          <button class="header__donate" type="button">
+            <img src="./images/donate.svg" alt="">
+            <span>Донат</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+  </main>
+
+  <!--
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <a class="footer__logo" href="index.html">
+          <img class="footer__logo-img" src="./images/footer-logo.png" alt="">
+        </a>
+        <div class="footer__socials">
+          <a class="footer__social" href="#">
+            <img src="./images/instagram-white.svg" alt="">
+          </a>
+          <a class="footer__social" href="#">
+            <img src="./images/facebook-white.svg" alt="">
+          </a>
+          <a class="footer__social" href="#">
+            <img src="./images/telegram-white.svg" alt="">
+          </a>
+        </div>
+        <button class="footer__donate">
+          <img src="./images/donate.svg" alt="">
+          <span>Донат</span>
+        </button>
+      </div>
+      <div class="footer__inner">
+        <ul class="footer__list">
+          <p class="footer__list-title">
+            Графік роботи
+          </p>
+          <li class="footer__list-item">
+            <a class="footer__list-link" href="#">Понеділок - п'ятниця <br> 9:00 - 22:00</a>
+          </li>
+          <li class="footer__list-item">
+            <a class="footer__list-link" href="#">Субота <br> 9:00 - 18:00</a>
+          </li>
+          <li class="footer__list-item">
+            <a class="footer__list-link" href="#">Неділя <br>10:00 - 19:00</a>
+          </li>
+        </ul>
+        <ul class="footer__list">
+          <p class="footer__list-title">
+            Про нас
+          </p>
+          <li class="footer__list-item">
+            <a class="footer__list-link" href="#about">Місія</a>
+          </li>
+          <li class="footer__list-item">
+            <a class="footer__list-link" href="#about">Цінності</a>
+          </li>
+          <li class="footer__list-item">
+            <a class="footer__list-link" href="#about">Команда</a>
+          </li>
+          <li class="footer__list-item">
+            <a class="footer__list-link" href="#about">Партнери</a>
+          </li>
+        </ul>
+        <ul class="footer__list">
+          <p class="footer__list-title">
+            Програми
+          </p>
+          <li class="footer__list-item">
+            <a class="footer__list-link" href="#programs">Для дорослих</a>
+          </li>
+          <li class="footer__list-item">
+            <a class="footer__list-link" href="#programs">Для дітей</a>
+          </li>
+        </ul>
+        <ul class="footer__list">
+          <p class="footer__list-title">
+            Заходи
+          </p>
+        </ul>
+        <ul class="footer__list">
+          <p class="footer__list-title">
+            Оренда
+          </p>
+        </ul>
+        <ul class="footer__list">
+          <p class="footer__list-title">
+            Волонтерська платформа
+          </p>
+          <li class="footer__list-item">
+            <a class="footer__list-link" href="#volunteering">Про волонтерів і проекти</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <div class="footer__bottom-inner">
+          <p class="footer__bottom-text">
+            © 2015 - 2026 - ЄКЦ "Бейт Дан". Всі права захищені
+          </p>
+          <img class="footer__bottom-img" src="./images/footer-copy.png" alt="">
+        </div>
+      </div>
+    </div>
+  </footer>
+  -->
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
