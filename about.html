@@ -145,13 +145,13 @@
               <div class="values__item">Наступність</div>
             </div>
             <div class="values__item-wrap">
-              <div class="values__item" style="font-size: 20px; padding: 10px 20px">Комфорт і підтримка</div>
-            </div>
-            <div class="values__item-wrap">
-              <div class="values__item" style="padding: 10px 40px">Сімейність</div>
+              <div class="values__item values__item--comfort">Комфорт і підтримка</div>
             </div>
             <div class="values__item-wrap">
               <div class="values__item values__item-white">Новаторство у єврейському полі</div>
+            </div>
+            <div class="values__item-wrap">
+              <div class="values__item values__item--family">Сімейність</div>
             </div>
             <div class="values__item-wrap">
               <div class="values__item">Довіра</div>
@@ -364,7 +364,46 @@
         </div>
       </div>
     </section>
-
+    <section class="contact">
+      <div class="container">
+        <div class="contact__inner">
+          <img class="contact__img" src="./images/contact.png" alt="">
+          <div class="contact__content">
+            <h2 class="contact__title">Напишіть нам</h2>
+            <form class="contact__form" id="contact-form" action="">
+              <div class="contact__form-row">
+                <div class="contact__field">
+                  <label class="contact__label" for="contact-phone">Телефон</label>
+                  <input class="contact__input" id="contact-phone" type="tel" name="phone" placeholder="Пишіть тут">
+                </div>
+                <div class="contact__field">
+                  <label class="contact__label" for="contact-email">Email</label>
+                  <input class="contact__input" id="contact-email" type="email" name="email" placeholder="Пишіть тут">
+                </div>
+              </div>
+              <div class="contact__field contact__field--full">
+                <label class="contact__label" for="contact-comment">Коментар</label>
+                <textarea class="contact__textarea" id="contact-comment" name="comment" placeholder="Пишіть тут"></textarea>
+              </div>
+              <label class="contact__agree">
+                <input class="contact__agree-input" type="checkbox" name="agreement" required>
+                <span class="contact__agree-text">погоджуюся на обробку персональних даних</span>
+              </label>
+            </form>
+            <div class="contact__bottom">
+              <div class="contact__bottom-submit">
+                <button class="contact__submit clubs__button" type="submit" form="contact-form">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M3 8.5L11.5 14.5L20 8.5M4 19H20C20.5523 19 21 18.5523 21 18V6C21 5.44772 20.5523 5 20 5H4C3.44772 5 3 5.44772 3 6V18C3 18.5523 3.44772 19 4 19Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <span>Надіслати</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
 
 
@@ -411,7 +450,6 @@
 
   </main>
 
-  <!--
   <footer class="footer">
     <div class="container">
       <div class="footer__top">
@@ -508,8 +546,7 @@
       </div>
     </div>
   </footer>
-  -->
-
+  
   <script src="js/main.js"></script>
 </body>
 
