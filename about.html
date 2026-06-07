@@ -15,6 +15,17 @@
 
 <body>
 
+  <svg class="visually-hidden" width="0" height="0" aria-hidden="true">
+    <defs>
+      <clipPath id="team-profile-clip" clipPathUnits="objectBoundingBox">
+        <path d="M 0.115 0.82 A 0.5 0.5 0 1 1 0.885 0.82 Q 0.5 0.71 0.115 0.82 Z" />
+      </clipPath>
+      <clipPath id="team-profile-photo-clip" clipPathUnits="objectBoundingBox">
+        <path d="M 0 0 H 1 V 0.828 L 0.885 0.828 Q 0.5 0.745 0.115 0.828 H 0 V 0 Z" />
+      </clipPath>
+    </defs>
+  </svg>
+
   <header class="header">
     <div class="header__inner">
       <a class="logo" href="index.html">
@@ -29,7 +40,7 @@
       <div class="header__menu" id="header-menu">
         <nav class="nav">
           <ul class="nav__list">
-            <li class="nav__item nav__item--dropdown">
+            <li class="nav__item nav__item--dropdown nav__item--active">
               <a class="nav__link" href="#about">Про нас</a>
               <ul class="nav__dropdown">
                 <li class="nav__dropdown-item">
@@ -89,7 +100,315 @@
     </div>
   </header>
 
-  <main>
+  <main class="main">
+
+    <section class="about">
+      <div class="container">
+        <div class="about__inner">
+          <div class="about__content">
+            <div class="about__subtitle">
+              BEIT DAN
+            </div>
+            <h2 class="about__title">
+              Про нас
+            </h2>
+            <p class="about__text">
+              Єврейський общинний центр для сімей, який робить єврейство доступним, єврейське життя наповненим і общину
+              живою.
+            </p>
+          </div>
+          <div class="about__image">
+            <img src="./images/about.png" alt="">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="values">
+      <div class="container">
+        <div class="values__inner">
+          <div class="values__top">
+            <h2 class="values__title">
+              Наші цінності
+            </h2>
+          </div>
+          <div class="values__items">
+            <div class="values__item-wrap">
+              <div class="values__item">Освіта</div>
+            </div>
+            <div class="values__item-wrap">
+              <div class="values__item">Єврейство</div>
+            </div>
+            <div class="values__item-wrap">
+              <div class="values__item">Лідерство</div>
+            </div>
+            <div class="values__item-wrap">
+              <div class="values__item">Наступність</div>
+            </div>
+            <div class="values__item-wrap">
+              <div class="values__item" style="font-size: 20px; padding: 10px 20px">Комфорт і підтримка</div>
+            </div>
+            <div class="values__item-wrap">
+              <div class="values__item" style="padding: 10px 40px">Сімейність</div>
+            </div>
+            <div class="values__item-wrap">
+              <div class="values__item values__item-white">Новаторство у єврейському полі</div>
+            </div>
+            <div class="values__item-wrap">
+              <div class="values__item">Довіра</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="team">
+      <div class="container">
+        <div class="team__top">
+          <div class="team__profile">
+            <div class="team__profile-img">
+              <img src="./images/team-1.png" alt="">
+            </div>
+            <div class="team__info">
+              <div class="team__info-position">Директор</div>
+              <div class="team__info-name">Артем Окунь</div>
+            </div>
+          </div>
+          <div class="team__content">
+            <h2 class="team__title">
+              Команда
+            </h2>
+            <p class="team__text">
+              <span>“</span>Більше 20 років ми зберігаємо культуру, зміцнюємо громаду
+              та створюємо простір для зустрічей, творчості та розвитку<span>”</span>
+            </p>
+          </div>
+        </div>
+        <div class="team__crew">
+          <div class="team__crew-title">
+            <img src="./images/bulb.svg" alt="">
+            <span>Адміністративний персонал</span>
+          </div>
+          <div class="team__inner">
+            <div class="team__profile">
+              <div class="team__profile-img">
+                <img src="./images/team-2.png" alt="">
+              </div>
+              <div class="team__info">
+                <div class="team__info-position">Програмний директор</div>
+                <div class="team__info-name">Вероніка Симонова</div>
+              </div>
+            </div>
+            <div class="team__profile">
+              <div class="team__profile-img">
+                <img src="./images/team-3.png" alt="">
+              </div>
+              <div class="team__info">
+                <div class="team__info-position">Бухгалтер</div>
+                <div class="team__info-name">Людмила Єрмолаєва</div>
+              </div>
+            </div>
+            <div class="team__profile">
+              <div class="team__profile-img">
+                <img src="./images/team-4.png" alt="">
+              </div>
+              <div class="team__info">
+                <div class="team__info-position">Адміністратор</div>
+                <div class="team__info-name">Костянтин Кузнєцов</div>
+              </div>
+            </div>
+            <div class="team__profile">
+              <div class="team__profile-img">
+                <img src="./images/team-5.png" alt="">
+              </div>
+              <div class="team__info">
+                <div class="team__info-position">Технічний адміністратор</div>
+                <div class="team__info-name">Юрій Куршаков</div>
+              </div>
+            </div>
+            <div class="team__profile">
+              <div class="team__profile-img">
+                <img src="./images/team-6.png" alt="">
+              </div>
+              <div class="team__info">
+                <div class="team__info-position">PA, HR</div>
+                <div class="team__info-name">Маргарита Куршакова</div>
+              </div>
+            </div>
+            <div class="team__profile">
+              <div class="team__profile-img">
+                <img src="./images/team-2.png" alt="">
+              </div>
+              <div class="team__info">
+                <div class="team__info-position">Оператор бази даних</div>
+                <div class="team__info-name">Діана Меланіч</div>
+              </div>
+            </div>
+            <div class="team__profile">
+              <div class="team__profile-img">
+                <img src="./images/team-3.png" alt="">
+              </div>
+              <div class="team__info">
+                <div class="team__info-position">Рецепшионіст</div>
+                <div class="team__info-name">Олена Черкашина</div>
+              </div>
+            </div>
+            <div class="team__profile">
+              <div class="team__profile-img">
+                <img src="./images/team-6.png" alt="">
+              </div>
+              <div class="team__info">
+                <div class="team__info-position">Менеджер з маркетингу</div>
+                <div class="team__info-name">Дарія Ачкасова</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="team__crew team__crew--second">
+          <div class="team__crew-title">
+            <img src="./images/tv.svg" alt="">
+            <span>Програмний персонал</span>
+          </div>
+          <div class="team__inner">
+            <div class="team__profile">
+              <div class="team__profile-img">
+                <img src="./images/team-2.png" alt="">
+              </div>
+              <div class="team__info">
+                <div class="team__info-position">Координатор волонтерської
+                  платформи</div>
+                <div class="team__info-name">Анна Зайчук</div>
+              </div>
+            </div>
+            <div class="team__profile">
+              <div class="team__profile-img">
+                <img src="./images/team-3.png" alt="">
+              </div>
+              <div class="team__info">
+                <div class="team__info-position">Координатор дитячих програм</div>
+                <div class="team__info-name">Ксенія Балинська</div>
+              </div>
+            </div>
+            <div class="team__profile">
+              <div class="team__profile-img">
+                <img src="./images/team-6.png" alt="">
+              </div>
+              <div class="team__info">
+                <div class="team__info-position">Керівник підліткового клубу</div>
+                <div class="team__info-name">Анастасія Мікеніна</div>
+              </div>
+            </div>
+            <div class="team__profile">
+              <div class="team__profile-img">
+                <img src="./images/team-5.png" alt="">
+              </div>
+              <div class="team__info">
+                <div class="team__info-position">Координатор общинних програм</div>
+                <div class="team__info-name">Ярік Андрієнко</div>
+              </div>
+            </div>
+            <div class="team__profile">
+              <div class="team__profile-img">
+                <img src="./images/team-6.png" alt="">
+              </div>
+              <div class="team__info">
+                <div class="team__info-position">Менеджер комерційних програм</div>
+                <div class="team__info-name">Наталя Тарасова</div>
+              </div>
+            </div>
+            <div class="team__profile">
+              <div class="team__profile-img">
+                <img src="./images/team-2.png" alt="">
+              </div>
+              <div class="team__info">
+                <div class="team__info-position">Координатор AJT Junior
+                  та недільної школи</div>
+                <div class="team__info-name">Аня Фредриксен</div>
+              </div>
+            </div>
+            <div class="team__profile">
+              <div class="team__profile-img">
+                <img src="./images/team-3.png" alt="">
+              </div>
+              <div class="team__info">
+                <div class="team__info-position">Вихователька Baby Hub</div>
+                <div class="team__info-name">Інна Гайдук</div>
+              </div>
+            </div>
+            <div class="team__profile">
+              <div class="team__profile-img">
+                <img src="./images/team-2.png" alt="">
+              </div>
+              <div class="team__info">
+                <div class="team__info-position">Помічниця виховательки Baby Hub</div>
+                <div class="team__info-name">Женя</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="partners">
+      <div class="container">
+        <div class="partners__inner">
+          <h2 class="partners__title">Наші партнери</h2>
+          <p class="partners__text">
+            Робити життя наших підопічних більш яскравим і наповненим допомагають партнери «Бейт Дана». Ми дякуємо:
+          </p>
+          <div class="partners__images">
+            <img class="partners__img" src="./images/partners-1.svg" alt="">
+            <img class="partners__img" src="./images/partners-2.svg" alt="">
+            <img class="partners__img" src="./images/partners-3.svg" alt="">
+            <img class="partners__img" src="./images/partners-4.svg" alt="">
+            <img class="partners__img" src="./images/partners-5.svg" alt="">
+            <img class="partners__img" src="./images/partners-6.svg" alt="">
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   </main>
 
   <!--

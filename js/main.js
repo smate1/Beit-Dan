@@ -12,11 +12,9 @@
 	const isMobileMenu = () => window.innerWidth <= MOBILE_BREAKPOINT
 
 	const setHeaderOffset = () => {
-		const inner = header.querySelector('.header__inner')
-		if (!inner) return
 		document.documentElement.style.setProperty(
 			'--header-offset',
-			`${inner.offsetHeight}px`,
+			`${header.offsetHeight}px`,
 		)
 	}
 
@@ -184,6 +182,19 @@
 	})
 
 	setHeaderOffset()
+
+	let isHeaderScrolled = false
+
+	const updateHeaderScroll = () => {
+		const scrolled = getScrollPosition() > 0
+		if (scrolled === isHeaderScrolled) return
+		isHeaderScrolled = scrolled
+		header.classList.toggle('header--scrolled', scrolled)
+		setHeaderOffset()
+	}
+
+	updateHeaderScroll()
+	window.addEventListener('scroll', updateHeaderScroll, { passive: true })
 })()
 
 ;(function () {
