@@ -391,3 +391,34 @@
 	window.addEventListener('resize', update)
 	update()
 })()
+
+;(function () {
+	const accordion = document.querySelector('.accordion')
+	if (!accordion) return
+
+	accordion.querySelectorAll('.accordion__item').forEach(item => {
+		const header = item.querySelector('.accordion__header')
+		const btn = item.querySelector('.accordion__btn')
+		if (!header || !btn) return
+
+		const toggle = () => {
+			const isOpen = item.classList.toggle('accordion__item--open')
+			btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false')
+			btn.setAttribute('aria-label', isOpen ? 'Згорнути' : 'Розгорнути')
+			header.setAttribute('aria-expanded', isOpen ? 'true' : 'false')
+		}
+
+		header.addEventListener('click', toggle)
+		header.addEventListener('keydown', e => {
+			if (e.key === 'Enter' || e.key === ' ') {
+				e.preventDefault()
+				toggle()
+			}
+		})
+
+		header.setAttribute('tabindex', '0')
+		header.setAttribute('role', 'button')
+		header.setAttribute('aria-expanded', 'false')
+		btn.setAttribute('tabindex', '-1')
+	})
+})()

@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="ua">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Клуби — Beit Dan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <svg class="visually-hidden" width="0" height="0" aria-hidden="true">
+    <defs>
+      <clipPath id="team-profile-clip" clipPathUnits="objectBoundingBox">
+        <path d="M 0.115 0.82 A 0.5 0.5 0 1 1 0.885 0.82 Q 0.5 0.71 0.115 0.82 Z" />
+      </clipPath>
+      <clipPath id="team-profile-photo-clip" clipPathUnits="objectBoundingBox">
+        <path d="M 0 0 H 1 V 0.828 L 0.885 0.828 Q 0.5 0.745 0.115 0.828 H 0 V 0 Z" />
+      </clipPath>
+    </defs>
+  </svg>
+
+  <header class="header">
+    <div class="header__inner">
+      <a class="logo" href="index.html">
+        <img class="logo__img" src="./images/logo.png" alt="logo">
+      </a>
+      <button class="header__burger" type="button" aria-label="Відкрити меню" aria-expanded="false"
+        aria-controls="header-menu">
+        <span class="header__burger-line"></span>
+        <span class="header__burger-line"></span>
+        <span class="header__burger-line"></span>
+      </button>
+      <div class="header__menu" id="header-menu">
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item nav__item--dropdown">
+              <a class="nav__link" href="about.html">Про нас</a>
+              <ul class="nav__dropdown">
+                <li class="nav__dropdown-item">
+                  <a class="nav__dropdown-link" href="about.html#about">Місія</a>
+                </li>
+                <li class="nav__dropdown-item">
+                  <a class="nav__dropdown-link" href="about.html#about">Цінності</a>
+                </li>
+                <li class="nav__dropdown-item">
+                  <a class="nav__dropdown-link" href="about.html#about">Команда</a>
+                </li>
+                <li class="nav__dropdown-item">
+                  <a class="nav__dropdown-link" href="about.html#about">Партнери</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav__item nav__item--dropdown nav__item--active">
+              <a class="nav__link" href="#programs">Програми</a>
+              <ul class="nav__dropdown">
+                <li class="nav__dropdown-item">
+                  <a class="nav__dropdown-link" href="#programs">Для дорослих</a>
+                </li>
+                <li class="nav__dropdown-item">
+                  <a class="nav__dropdown-link" href="#programs">Для дітей</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="index.html#events">Заходи</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="index.html#rent">Оренда</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="index.html#volunteering">Волонтерська платформа</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header__right">
+          <div class="header__socials">
+            <a class="header__social" href="#">
+              <img src="./images/instagram.svg" alt="Instagram">
+            </a>
+            <a class="header__social" href="#">
+              <img src="./images/facebook.svg" alt="Facebook">
+            </a>
+            <a class="header__social" href="#">
+              <img src="./images/telegram.svg" alt="Telegram">
+            </a>
+            <a class="header__social" href="#">
+              <img src="./images/location.svg" alt="Локація">
+            </a>
+          </div>
+          <button class="header__donate" type="button">
+            <img src="./images/donate.svg" alt="">
+            <span>Донат</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main" id="programs">
+
+    <section class="clubs">
+      <div class="container">
+        <div class="clubs__inner">
+          <div class="clubs__content">
+            <h2 class="clubs__title">
+              Клуби Єврейського Культурного Центра «Бейт Дан»
+            </h2>
+            <p class="clubs__subtitle">
+              Клуби та програми культурного центру «Бейт Дан»
+            </p>
+          </div>
+          <img class="clubs__img" src="./images/clubs.svg" alt="">
+        </div>
+        <div class="clubs__list">
+          <div class="clubs__card">
+            <p class="clubs__item-text">
+              <span class="clubs__item-text-inner"><span>“</span>Для нас важливо зберігати культурну спадщину, підтримувати атмосферу взаємної поваги та відкритості<span>”</span></span>
+            </p>
+            <div class="team__profile">
+              <div class="team__profile-img">
+                <img src="./images/team-1.png" alt="">
+              </div>
+              <div class="team__info">
+                <div class="team__info-position">Координатор</div>
+                <div class="team__info-name">Артем Окунь</div>
+              </div>
+            </div>
+          </div>
+          <div class="clubs__card">
+            <p class="clubs__item-text">
+              <span class="clubs__item-text-inner"><span>“</span>Ми вдячні всім учасникам, партнерам та волонтерам, які разом з нами роблять «Бейт Дан»<span>”</span></span>
+            </p>
+            <div class="team__profile">
+              <div class="team__profile-img">
+                <img src="./images/team-3.png" alt="">
+              </div>
+              <div class="team__info">
+                <div class="team__info-position">Координатор</div>
+                <div class="team__info-name">Людмила Єрмолаєва</div>
+              </div>
+            </div>
+          </div>
+          <div class="clubs__card">
+            <p class="clubs__item-text">
+              <span class="clubs__item-text-inner"><span>“</span>Продовжуємо розвиватися та створювати нові можливості для спілкування, творчості та натхнення.<span>”</span></span>
+            </p>
+            <div class="team__profile">
+              <div class="team__profile-img">
+                <img src="./images/team-6.png" alt="">
+              </div>
+              <div class="team__info">
+                <div class="team__info-position">Координатор</div>
+                <div class="team__info-name">Дарія Ачкасова</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="accordion">
+      <div class="container">
+        <div class="accordion__top">
+          <img class="accordion__img" src="./images/star.svg" alt="">
+          <h2 class="accordion__title">Програми Єврейського Культурного Центра «Бейт Дан»</h2>
+        </div>
+        <div class="accordion__inner">
+          <div class="accordion__item">
+            <div class="accordion__header">
+              <div class="accordion__left">
+                <img src="./images/accordion-1.svg" alt="">
+                <div class="accordion__left-title">Програми для дітей</div>
+              </div>
+              <button class="accordion__btn" type="button" aria-expanded="false" aria-label="Розгорнути">
+                <img src="./images/union.svg" alt="">
+              </button>
+            </div>
+            <div class="accordion__body">
+              <div class="accordion__cards">
+                <article class="accordion__card">
+                  <img class="accordion__card-img" src="./images/show-arayot-junior.jpg" alt="">
+                  <div class="accordion__card-content">
+                    <h3 class="accordion__card-title">Студія Дошкільного Розвитку</h3>
+                    <p class="accordion__card-subtitle">Танці.</p>
+                    <p class="accordion__card-text">
+                      Програма розвиває пластику тіла, почуття ритму та координацію через різні стилі руху і музику. <br>
+                      Діти стають більш впевненими в собі, вчаться виражати емоції через рух і працювати в колективі.
+                    </p>
+                  </div>
+                  <div class="accordion__card-footer">
+                    <div class="accordion__card-footer-start">
+                      <div class="accordion__card-btn-wrap">
+                        <button class="accordion__card-btn" type="button">
+                          <img src="./images/user.svg" alt="">
+                          <span>Записатись</span>
+                        </button>
+                      </div>
+                      <div class="accordion__card-info">
+                        <div class="accordion__card-schedule">
+                          <div class="accordion__card-date">
+                            <img src="./images/calendar-date.svg" alt="">
+                            <span>Вівторок</span>
+                          </div>
+                          <div class="accordion__card-time">
+                            <img src="./images/clock.svg" alt="">
+                            <span>13:00 - 13:45</span>
+                          </div>
+                        </div>
+                        <div class="accordion__card-schedule">
+                          <div class="accordion__card-date">
+                            <img src="./images/calendar-date.svg" alt="">
+                            <span>П'ятниця</span>
+                          </div>
+                          <div class="accordion__card-time">
+                            <img src="./images/clock.svg" alt="">
+                            <span>13:00 - 13:45</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+                <article class="accordion__card">
+                  <img class="accordion__card-img" src="./images/show-arayot-junior.jpg" alt="">
+                  <div class="accordion__card-content">
+                    <h3 class="accordion__card-title">Ментальна арифметика</h3>
+                    <p class="accordion__card-subtitle">5-6 років.</p>
+                    <p class="accordion__card-text">
+                      Заняття допомагають швидко рахувати в умі, розвивають пам'ять, увагу та логічне мислення. <br>
+                      Учасники вчаться концентруватися і розвивають когнітивні навички через цікаві та інтерактивні
+                      вправи.
+                    </p>
+                  </div>
+                  <div class="accordion__card-footer">
+                    <div class="accordion__card-footer-start">
+                      <div class="accordion__card-btn-wrap">
+                        <button class="accordion__card-btn" type="button">
+                          <img src="./images/user.svg" alt="">
+                          <span>Записатись</span>
+                        </button>
+                      </div>
+                      <div class="accordion__card-info">
+                        <div class="accordion__card-schedule">
+                          <div class="accordion__card-date">
+                            <img src="./images/calendar-date.svg" alt="">
+                            <span>Понеділок</span>
+                          </div>
+                          <div class="accordion__card-time">
+                            <img src="./images/clock.svg" alt="">
+                            <span>14:30 - 15:15</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+                <article class="accordion__card">
+                  <img class="accordion__card-img" src="./images/show-arayot-junior.jpg" alt="">
+                  <div class="accordion__card-content">
+                    <h3 class="accordion__card-title">Підготовка до школи</h3>
+                    <p class="accordion__card-subtitle">5-6 років.</p>
+                    <p class="accordion__card-text">
+                      Програма дає базові знання з читання, письма та математики. Діти отримують впевненість у своїх
+                      навичках і легше адаптуються до шкільного середовища, а навчання проходить у ігровій та
+                      підтримуючій атмосфері.
+                    </p>
+                  </div>
+                  <div class="accordion__card-footer">
+                    <div class="accordion__card-footer-start">
+                      <div class="accordion__card-btn-wrap">
+                        <button class="accordion__card-btn" type="button">
+                          <img src="./images/user.svg" alt="">
+                          <span>Записатись</span>
+                        </button>
+                      </div>
+                      <div class="accordion__card-info">
+                        <div class="accordion__card-schedule">
+                          <div class="accordion__card-date">
+                            <img src="./images/calendar-date.svg" alt="">
+                            <span>Вівторок</span>
+                          </div>
+                          <div class="accordion__card-time">
+                            <img src="./images/clock.svg" alt="">
+                            <span>13:00 - 13:45</span>
+                          </div>
+                        </div>
+                        <div class="accordion__card-schedule">
+                          <div class="accordion__card-date">
+                            <img src="./images/calendar-date.svg" alt="">
+                            <span>П'ятниця</span>
+                          </div>
+                          <div class="accordion__card-time">
+                            <img src="./images/clock.svg" alt="">
+                            <span>13:00 - 13:45</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+                <article class="accordion__card">
+                  <img class="accordion__card-img" src="./images/show-arayot-junior.jpg" alt="">
+                  <div class="accordion__card-content">
+                    <h3 class="accordion__card-title">Тхеквондо</h3>
+                    <p class="accordion__card-subtitle">3-6 років.</p>
+                    <p class="accordion__card-text">
+                      Заняття зміцнюють тіло, розвивають координацію, дисципліну та впевненість у собі. Під керівництвом
+                      тренера діти вчаться контролювати емоції та досягати цілей.
+                    </p>
+                  </div>
+                  <div class="accordion__card-footer">
+                    <div class="accordion__card-footer-start">
+                      <div class="accordion__card-btn-wrap">
+                        <button class="accordion__card-btn" type="button">
+                          <img src="./images/user.svg" alt="">
+                          <span>Записатись</span>
+                        </button>
+                      </div>
+                      <div class="accordion__card-info">
+                        <div class="accordion__card-schedule">
+                          <div class="accordion__card-date">
+                            <img src="./images/calendar-date.svg" alt="">
+                            <span>Вівторок</span>
+                          </div>
+                          <div class="accordion__card-time">
+                            <img src="./images/clock.svg" alt="">
+                            <span>13:00 - 13:45</span>
+                          </div>
+                        </div>
+                        <div class="accordion__card-schedule">
+                          <div class="accordion__card-date">
+                            <img src="./images/calendar-date.svg" alt="">
+                            <span>Четвер</span>
+                          </div>
+                          <div class="accordion__card-time">
+                            <img src="./images/clock.svg" alt="">
+                            <span>13:00 - 13:45</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+          <div class="accordion__item">
+            <div class="accordion__header">
+              <div class="accordion__left">
+                <img src="./images/accordion-2.svg" alt="">
+                <div class="accordion__left-title">Програми Kids Hub (6-9 р.)</div>
+              </div>
+              <button class="accordion__btn" type="button" aria-expanded="false" aria-label="Розгорнути">
+                <img src="./images/union.svg" alt="">
+              </button>
+            </div>
+            <div class="accordion__body">
+              <div class="accordion__cards">
+                <article class="accordion__card">
+                  <img class="accordion__card-img" src="./images/show-arayot-junior.jpg" alt="">
+                  <div class="accordion__card-content">
+                    <h3 class="accordion__card-title">Арайот «Юніор»</h3>
+                    <p class="accordion__card-subtitle">Щотижневі зустрічі підліткового клубу:</p>
+                    <p class="accordion__card-text">
+                      квести, тренінги з лідерства, свята єврейського календаря та зустрічі з цікавими спікерами.
+                    </p>
+                  </div>
+                  <div class="accordion__card-footer">
+                    <div class="accordion__card-footer-start">
+                      <div class="accordion__card-btn-wrap">
+                        <button class="accordion__card-btn" type="button">
+                          <img src="./images/user.svg" alt="">
+                          <span>Записатись</span>
+                        </button>
+                      </div>
+                      <div class="accordion__card-info">
+                        <div class="accordion__card-schedule">
+                          <div class="accordion__card-date">
+                            <img src="./images/calendar-date.svg" alt="">
+                            <span>Жов, 17, 2025</span>
+                          </div>
+                          <div class="accordion__card-time">
+                            <img src="./images/clock.svg" alt="">
+                            <span>12:45</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+                <article class="accordion__card">
+                  <img class="accordion__card-img" src="./images/show-arayot-junior.jpg" alt="">
+                  <div class="accordion__card-content">
+                    <h3 class="accordion__card-title">Спілкуємося англійською</h3>
+                    <p class="accordion__card-subtitle">Мовний клуб для підлітків:</p>
+                    <p class="accordion__card-text">
+                      неформальне спілкування, дискусії та практика англійської в дружній атмосфері центру «Бейт Дан».
+                    </p>
+                  </div>
+                  <div class="accordion__card-footer">
+                    <div class="accordion__card-footer-start">
+                      <div class="accordion__card-btn-wrap">
+                        <button class="accordion__card-btn" type="button">
+                          <img src="./images/user.svg" alt="">
+                          <span>Записатись</span>
+                        </button>
+                      </div>
+                      <div class="accordion__card-info">
+                        <div class="accordion__card-schedule">
+                          <div class="accordion__card-date">
+                            <img src="./images/calendar-date.svg" alt="">
+                            <span>Жов, 20, 2025</span>
+                          </div>
+                          <div class="accordion__card-time">
+                            <img src="./images/clock.svg" alt="">
+                            <span>16:00</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+                <article class="accordion__card">
+                  <img class="accordion__card-img" src="./images/show-arayot-junior.jpg" alt="">
+                  <div class="accordion__card-content">
+                    <h3 class="accordion__card-title">Знайомимося з єврейською традицією</h3>
+                    <p class="accordion__card-subtitle">Культурно-освітні зустрічі:</p>
+                    <p class="accordion__card-text">
+                      вивчаємо історію, свята та цінності єврейської спадщини через інтерактивні формати для молоді.
+                    </p>
+                  </div>
+                  <div class="accordion__card-footer">
+                    <div class="accordion__card-footer-start">
+                      <div class="accordion__card-btn-wrap">
+                        <button class="accordion__card-btn" type="button">
+                          <img src="./images/user.svg" alt="">
+                          <span>Записатись</span>
+                        </button>
+                      </div>
+                      <div class="accordion__card-info">
+                        <div class="accordion__card-schedule">
+                          <div class="accordion__card-date">
+                            <img src="./images/calendar-date.svg" alt="">
+                            <span>Жов, 21, 2025</span>
+                          </div>
+                          <div class="accordion__card-time">
+                            <img src="./images/clock.svg" alt="">
+                            <span>15:30</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+                <article class="accordion__card">
+                  <img class="accordion__card-img" src="./images/show-arayot-junior.jpg" alt="">
+                  <div class="accordion__card-content">
+                    <h3 class="accordion__card-title">Проектний менеджмент</h3>
+                    <p class="accordion__card-subtitle">Реалізуємо проекти разом:</p>
+                    <p class="accordion__card-text">
+                      підлітки вчаться планувати, організовувати та втілювати власні ініціативи разом із наставниками.
+                    </p>
+                  </div>
+                  <div class="accordion__card-footer">
+                    <div class="accordion__card-footer-start">
+                      <div class="accordion__card-btn-wrap">
+                        <button class="accordion__card-btn" type="button">
+                          <img src="./images/user.svg" alt="">
+                          <span>Записатись</span>
+                        </button>
+                      </div>
+                      <div class="accordion__card-info">
+                        <div class="accordion__card-schedule">
+                          <div class="accordion__card-date">
+                            <img src="./images/calendar-date.svg" alt="">
+                            <span>Жов, 22, 2025</span>
+                          </div>
+                          <div class="accordion__card-time">
+                            <img src="./images/clock.svg" alt="">
+                            <span>17:00</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+          <div class="accordion__item">
+            <div class="accordion__header">
+              <div class="accordion__left">
+                <img src="./images/accordion-3.svg" alt="">
+                <div class="accordion__left-title">Програми “Arayot Junior” (10-12 р.)</div>
+              </div>
+              <button class="accordion__btn" type="button" aria-expanded="false" aria-label="Розгорнути">
+                <img src="./images/union.svg" alt="">
+              </button>
+            </div>
+            <div class="accordion__body">
+              <div class="accordion__cards">
+                <article class="accordion__card">
+                  <img class="accordion__card-img" src="./images/show-arayot-junior.jpg" alt="">
+                  <div class="accordion__card-content">
+                    <h3 class="accordion__card-title">Святкуємо всією сім’єю</h3>
+                    <p class="accordion__card-subtitle">Сімейні заходи та свята:</p>
+                    <p class="accordion__card-text">
+                      спільне святкування єврейських свят, що об’єднує різні покоління громади Харкова.
+                    </p>
+                  </div>
+                  <div class="accordion__card-footer">
+                    <div class="accordion__card-footer-start">
+                      <div class="accordion__card-btn-wrap">
+                        <button class="accordion__card-btn" type="button">
+                          <img src="./images/user.svg" alt="">
+                          <span>Записатись</span>
+                        </button>
+                      </div>
+                      <div class="accordion__card-info">
+                        <div class="accordion__card-schedule">
+                          <div class="accordion__card-date">
+                            <img src="./images/calendar-date.svg" alt="">
+                            <span>Жов, 17, 2025</span>
+                          </div>
+                          <div class="accordion__card-time">
+                            <img src="./images/clock.svg" alt="">
+                            <span>18:00</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+                <article class="accordion__card">
+                  <img class="accordion__card-img" src="./images/show-arayot-junior.jpg" alt="">
+                  <div class="accordion__card-content">
+                    <h3 class="accordion__card-title">Зберігаємо зв’язок поколінь</h3>
+                    <p class="accordion__card-subtitle">Міжпоколінні програми:</p>
+                    <p class="accordion__card-text">
+                      зустрічі та активності, що допомагають передавати досвід і зберігати єврейську ідентичність у
+                      сім’ях.
+                    </p>
+                  </div>
+                  <div class="accordion__card-footer">
+                    <div class="accordion__card-footer-start">
+                      <div class="accordion__card-btn-wrap">
+                        <button class="accordion__card-btn" type="button">
+                          <img src="./images/user.svg" alt="">
+                          <span>Записатись</span>
+                        </button>
+                      </div>
+                      <div class="accordion__card-info">
+                        <div class="accordion__card-schedule">
+                          <div class="accordion__card-date">
+                            <img src="./images/calendar-date.svg" alt="">
+                            <span>Жов, 23, 2025</span>
+                          </div>
+                          <div class="accordion__card-time">
+                            <img src="./images/clock.svg" alt="">
+                            <span>19:00</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+                <article class="accordion__card">
+                  <img class="accordion__card-img" src="./images/show-arayot-junior.jpg" alt="">
+                  <div class="accordion__card-content">
+                    <h3 class="accordion__card-title">Сімейні виїзні семінари</h3>
+                    <p class="accordion__card-subtitle">Вікенди та виїзні програми:</p>
+                    <p class="accordion__card-text">
+                      проводимо разом сімейні виїзні семінари й вікенди для відпочинку, навчання та спілкування.
+                    </p>
+                  </div>
+                  <div class="accordion__card-footer">
+                    <div class="accordion__card-footer-start">
+                      <div class="accordion__card-btn-wrap">
+                        <button class="accordion__card-btn" type="button">
+                          <img src="./images/user.svg" alt="">
+                          <span>Записатись</span>
+                        </button>
+                      </div>
+                      <div class="accordion__card-info">
+                        <div class="accordion__card-schedule">
+                          <div class="accordion__card-date">
+                            <img src="./images/calendar-date.svg" alt="">
+                            <span>Жов, 24, 2025</span>
+                          </div>
+                          <div class="accordion__card-time">
+                            <img src="./images/clock.svg" alt="">
+                            <span>10:00</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+                <article class="accordion__card">
+                  <img class="accordion__card-img" src="./images/show-arayot-junior.jpg" alt="">
+                  <div class="accordion__card-content">
+                    <h3 class="accordion__card-title">Аматорський театр для дорослих</h3>
+                    <p class="accordion__card-subtitle">Творча самореалізація:</p>
+                    <p class="accordion__card-text">
+                      реалізуємо себе в аматорському театрі, створюючи вистави та культурні проекти для громади.
+                    </p>
+                  </div>
+                  <div class="accordion__card-footer">
+                    <div class="accordion__card-footer-start">
+                      <div class="accordion__card-btn-wrap">
+                        <button class="accordion__card-btn" type="button">
+                          <img src="./images/user.svg" alt="">
+                          <span>Записатись</span>
+                        </button>
+                      </div>
+                      <div class="accordion__card-info">
+                        <div class="accordion__card-schedule">
+                          <div class="accordion__card-date">
+                            <img src="./images/calendar-date.svg" alt="">
+                            <span>Жов, 25, 2025</span>
+                          </div>
+                          <div class="accordion__card-time">
+                            <img src="./images/clock.svg" alt="">
+                            <span>18:30</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <a class="footer__logo" href="index.html">
+          <img class="footer__logo-img" src="./images/footer-logo.png" alt="">
+        </a>
+        <div class="footer__socials">
+          <a class="footer__social" href="#">
+            <img src="./images/instagram-white.svg" alt="">
+          </a>
+          <a class="footer__social" href="#">
+            <img src="./images/facebook-white.svg" alt="">
+          </a>
+          <a class="footer__social" href="#">
+            <img src="./images/telegram-white.svg" alt="">
+          </a>
+        </div>
+        <button class="footer__donate">
+          <img src="./images/donate.svg" alt="">
+          <span>Донат</span>
+        </button>
+      </div>
+      <div class="footer__inner">
+        <ul class="footer__list">
+          <p class="footer__list-title">
+            Графік роботи
+          </p>
+          <li class="footer__list-item">
+            <a class="footer__list-link" href="#">Понеділок - п'ятниця <br> 9:00 - 22:00</a>
+          </li>
+          <li class="footer__list-item">
+            <a class="footer__list-link" href="#">Субота <br> 9:00 - 18:00</a>
+          </li>
+          <li class="footer__list-item">
+            <a class="footer__list-link" href="#">Неділя <br>10:00 - 19:00</a>
+          </li>
+        </ul>
+        <ul class="footer__list">
+          <p class="footer__list-title">
+            Про нас
+          </p>
+          <li class="footer__list-item">
+            <a class="footer__list-link" href="about.html#about">Місія</a>
+          </li>
+          <li class="footer__list-item">
+            <a class="footer__list-link" href="about.html#about">Цінності</a>
+          </li>
+          <li class="footer__list-item">
+            <a class="footer__list-link" href="about.html#about">Команда</a>
+          </li>
+          <li class="footer__list-item">
+            <a class="footer__list-link" href="about.html#about">Партнери</a>
+          </li>
+        </ul>
+        <ul class="footer__list">
+          <p class="footer__list-title">
+            Програми
+          </p>
+          <li class="footer__list-item">
+            <a class="footer__list-link" href="#programs">Для дорослих</a>
+          </li>
+          <li class="footer__list-item">
+            <a class="footer__list-link" href="#programs">Для дітей</a>
+          </li>
+        </ul>
+        <ul class="footer__list">
+          <p class="footer__list-title">
+            Заходи
+          </p>
+        </ul>
+        <ul class="footer__list">
+          <p class="footer__list-title">
+            Оренда
+          </p>
+        </ul>
+        <ul class="footer__list">
+          <p class="footer__list-title">
+            Волонтерська платформа
+          </p>
+          <li class="footer__list-item">
+            <a class="footer__list-link" href="index.html#volunteering">Про волонтерів і проекти</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <div class="footer__bottom-inner">
+          <p class="footer__bottom-text">
+            © 2015 - 2026 - ЄКЦ "Бейт Дан". Всі права захищені
+          </p>
+          <img class="footer__bottom-img" src="./images/footer-copy.png" alt="">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
