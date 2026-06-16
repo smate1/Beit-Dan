@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ua">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакти — Beit Dan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <svg class="visually-hidden" width="0" height="0" aria-hidden="true">
+    <defs>
+      <clipPath id="team-profile-clip" clipPathUnits="objectBoundingBox">
+        <path d="M 0.115 0.82 A 0.5 0.5 0 1 1 0.885 0.82 Q 0.5 0.71 0.115 0.82 Z" />
+      </clipPath>
+      <clipPath id="team-profile-photo-clip" clipPathUnits="objectBoundingBox">
+        <path d="M 0 0 H 1 V 0.828 L 0.885 0.828 Q 0.5 0.745 0.115 0.828 H 0 V 0 Z" />
+      </clipPath>
+    </defs>
+  </svg>
+
+  <header class="header">
+    <div class="header__inner">
+      <a class="logo" href="index.html">
+        <img class="logo__img" src="./images/logo.png" alt="logo">
+      </a>
+      <button class="header__burger" type="button" aria-label="Відкрити меню" aria-expanded="false"
+        aria-controls="header-menu">
+        <span class="header__burger-line"></span>
+        <span class="header__burger-line"></span>
+        <span class="header__burger-line"></span>
+      </button>
+      <div class="header__menu" id="header-menu">
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item nav__item--dropdown">
+              <a class="nav__link" href="about.html">Про нас</a>
+              <ul class="nav__dropdown">
+                <li class="nav__dropdown-item">
+                  <a class="nav__dropdown-link" href="about.html#about">Місія</a>
+                </li>
+                <li class="nav__dropdown-item">
+                  <a class="nav__dropdown-link" href="about.html#about">Цінності</a>
+                </li>
+                <li class="nav__dropdown-item">
+                  <a class="nav__dropdown-link" href="about.html#about">Команда</a>
+                </li>
+                <li class="nav__dropdown-item">
+                  <a class="nav__dropdown-link" href="about.html#about">Партнери</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav__item nav__item--dropdown">
+              <a class="nav__link" href="clubs.html#programs">Програми</a>
+              <ul class="nav__dropdown">
+                <li class="nav__dropdown-item">
+                  <a class="nav__dropdown-link" href="clubs.html#programs">Для дорослих</a>
+                </li>
+                <li class="nav__dropdown-item">
+                  <a class="nav__dropdown-link" href="clubs.html#programs">Для дітей</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="index.html#events">Заходи</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="index.html#rent">Оренда</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="index.html#volunteering">Волонтерська платформа</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header__right">
+          <div class="header__socials">
+            <a class="header__social" href="#">
+              <img src="./images/instagram.svg" alt="Instagram">
+            </a>
+            <a class="header__social" href="#">
+              <img src="./images/facebook.svg" alt="Facebook">
+            </a>
+            <a class="header__social" href="#">
+              <img src="./images/telegram.svg" alt="Telegram">
+            </a>
+            <a class="header__social" href="#">
+              <img src="./images/location.svg" alt="Локація">
+            </a>
+          </div>
+          <button class="header__donate" type="button">
+            <img src="./images/donate.svg" alt="">
+            <span>Донат</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <section class="contact">
+      <div class="container">
+        <div class="contact__top">
+          <h2 class="contact__heading">Зв'язатись з нами</h2>
+          <p class="contact__subtitle">Клуби та програми культурного центру «Бейт Дан»</p>
+        </div>
+        <div class="contact__inner">
+          <div class="contact__info" aria-label="Контактна інформація">
+            <div class="contact__info-block">
+              <div class="contact__info-label">Адрес</div>
+              <a class="contact__info-value contact__info-link"
+                href="https://www.google.com/maps/search/?api=1&query=%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%B0%2C%20%D0%A5%D0%B0%D1%80%D0%BA%D1%96%D0%B2%2C%2061072%2C%20%D0%B2%D1%83%D0%BB.%20%D0%A2%D0%BE%D0%B1%D0%BE%D0%BB%D1%8C%D1%81%D1%8C%D0%BA%D0%B0%2C%2046"
+                target="_blank" rel="noopener noreferrer">
+                Україна, Харків, 61072,<br>
+                вул. Тобольська, 46
+              </a>
+            </div>
+
+            <div class="contact__info-block">
+              <div class="contact__info-label">Телефон</div>
+              <div class="contact__info-value">
+                <a class="contact__info-link" href="tel:+380577665596">(057) 766-55-96</a>,
+                <a class="contact__info-link" href="tel:+380933113150">093-311-31-50</a>
+              </div>
+            </div>
+
+            <div class="contact__info-block">
+              <div class="contact__info-label">Email</div>
+              <a class="contact__info-link" href="mailto:office@beytdan.com">office@beytdan.com</a>
+            </div>
+
+            <div class="contact__info-block">
+              <div class="contact__info-label">Наші соц мережі</div>
+              <div class="contact__info-socials" aria-label="Соціальні мережі">
+                <a class="contact__info-social" href="#" aria-label="Instagram">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <path
+                      d="M20.0003 5.45453C16.0501 5.45453 15.5544 5.4718 14.0029 5.54241C12.4545 5.61332 11.3976 5.85847 10.4727 6.21817C9.5161 6.58968 8.70461 7.08665 7.89615 7.89544C7.08708 8.70392 6.59013 9.51544 6.21741 10.4718C5.85682 11.397 5.61137 12.4542 5.54167 14.0021C5.47228 15.5536 5.4541 16.0497 5.4541 20C5.4541 23.9503 5.47168 24.4445 5.54198 25.996C5.61319 27.5445 5.85833 28.6015 6.21771 29.5263C6.58952 30.483 7.08648 31.2945 7.89524 32.103C8.7034 32.9121 9.51489 33.4103 10.4709 33.7818C11.3963 34.1415 12.4536 34.3866 14.0017 34.4576C15.5532 34.5282 16.0486 34.5454 19.9985 34.5454C23.949 34.5454 24.4432 34.5282 25.9947 34.4576C27.5431 34.3866 28.6013 34.1415 29.5267 33.7818C30.483 33.4103 31.2933 32.9121 32.1015 32.103C32.9105 31.2945 33.4075 30.483 33.7802 29.5266C34.1378 28.6015 34.3832 27.5442 34.4559 25.9963C34.5256 24.4448 34.5438 23.9503 34.5438 20C34.5438 16.0497 34.5256 15.5539 34.4559 14.0024C34.3832 12.4539 34.1378 11.397 33.7802 10.4721C33.4075 9.51544 32.9105 8.70392 32.1015 7.89544C31.2924 7.08635 30.4833 6.58938 29.5258 6.21817C28.5986 5.85847 27.541 5.61332 25.9926 5.54241C24.4411 5.4718 23.9472 5.45453 19.9958 5.45453H20.0003ZM18.6955 8.07574C19.0828 8.07513 19.5149 8.07574 20.0003 8.07574C23.8838 8.07574 24.3441 8.08968 25.8777 8.15938C27.2959 8.22423 28.0655 8.4612 28.5782 8.66029C29.257 8.92392 29.7409 9.23907 30.2497 9.74816C30.7588 10.2573 31.0739 10.7421 31.3382 11.4209C31.5372 11.933 31.7745 12.7027 31.8391 14.1209C31.9088 15.6542 31.9239 16.1148 31.9239 19.9966C31.9239 23.8785 31.9088 24.3391 31.8391 25.8724C31.7742 27.2906 31.5372 28.0603 31.3382 28.5724C31.0745 29.2512 30.7588 29.7345 30.2497 30.2433C29.7406 30.7524 29.2573 31.0676 28.5782 31.3312C28.0661 31.5312 27.2959 31.7676 25.8777 31.8324C24.3444 31.9021 23.8838 31.9173 20.0003 31.9173C16.1165 31.9173 15.6562 31.9021 14.1229 31.8324C12.7048 31.767 11.9351 31.53 11.4221 31.3309C10.7433 31.0673 10.2585 30.7521 9.74943 30.243C9.24035 29.7339 8.92521 29.2503 8.66097 28.5712C8.46189 28.0591 8.22462 27.2894 8.16008 25.8712C8.09039 24.3379 8.07645 23.8773 8.07645 19.993C8.07645 16.1088 8.09039 15.6506 8.16008 14.1173C8.22493 12.6991 8.46189 11.9294 8.66097 11.4166C8.9246 10.7379 9.24035 10.253 9.74943 9.74392C10.2585 9.23483 10.7433 8.91968 11.4221 8.65544C11.9348 8.45544 12.7048 8.21907 14.1229 8.15392C15.4647 8.09332 15.9847 8.07513 18.6955 8.0721V8.07574ZM27.7643 10.4909C26.8007 10.4909 26.0189 11.2718 26.0189 12.2357C26.0189 13.1994 26.8007 13.9812 27.7643 13.9812C28.7279 13.9812 29.5097 13.1994 29.5097 12.2357C29.5097 11.2721 28.7279 10.4903 27.7643 10.4903V10.4909ZM20.0003 12.5303C15.8753 12.5303 12.5309 15.8748 12.5309 20C12.5309 24.1251 15.8753 27.4682 20.0003 27.4682C24.1254 27.4682 27.4686 24.1251 27.4686 20C27.4686 15.8748 24.125 12.5303 20 12.5303H20.0003ZM20.0003 15.1515C22.6778 15.1515 24.8487 17.3221 24.8487 20C24.8487 22.6776 22.6778 24.8485 20.0003 24.8485C17.3225 24.8485 15.152 22.6776 15.152 20C15.152 17.3221 17.3225 15.1515 20.0003 15.1515Z"
+                      fill="white" />
+                  </svg>
+                </a>
+                <a class="contact__info-social" href="#" aria-label="Facebook">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <path
+                      d="M20 5C28.25 5 35 11.75 35 20C35 27.4166 29.5833 33.583 22.5 34.833L22.415 34.7656C22.4433 34.7602 22.4717 34.7557 22.5 34.75V24.167H25.833L26.5 20H22.5V17.083C22.5001 15.9165 22.9168 15 24.75 15H26.667V11.167C25.5837 11.0003 24.4163 10.833 23.333 10.833C19.9165 10.8331 17.5 12.9171 17.5 16.667V20H13.75V24.167H17.5V34.75C17.5279 34.7556 17.556 34.7602 17.584 34.7656L17.5 34.833C10.4167 33.583 5 27.4166 5 20C5 11.75 11.75 5 20 5Z"
+                      fill="white" />
+                  </svg>
+                </a>
+                <a class="contact__info-social" href="#" aria-label="Telegram">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <path
+                      d="M30.5424 9.35499L6.46057 18.6434C4.81694 19.3029 4.82669 20.2196 6.16098 20.6284L12.1671 22.503L14.4651 29.5487C14.7445 30.3199 14.6068 30.6257 15.4166 30.6257C16.0415 30.6257 16.3187 30.3408 16.6668 30.0008C16.8881 29.7842 18.2023 28.5065 19.6697 27.0798L25.9171 31.6957C27.0667 32.33 27.8968 32.0014 28.1831 30.628L32.2841 11.3027C32.7039 9.61935 31.6423 8.8558 30.5424 9.35499ZM13.1097 22.0723L26.6474 13.5313C27.3232 13.1214 27.9429 13.3418 27.4341 13.7934L15.8423 24.2522L15.3909 29.0662L13.1097 22.0723Z"
+                      fill="white" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="contact__content">
+            <h2 class="about-contact__title">Напишіть нам</h2>
+            <form class="about-contact__form" id="about-contact-form" action="">
+              <div class="about-contact__form-row">
+                <div class="about-contact__field">
+                  <label class="about-contact__label" for="about-contact-phone">Телефон</label>
+                  <input class="about-contact__input" id="about-contact-phone" type="tel" name="phone"
+                    placeholder="Пишіть тут">
+                </div>
+                <div class="about-contact__field">
+                  <label class="about-contact__label" for="about-contact-email">Email</label>
+                  <input class="about-contact__input" id="about-contact-email" type="email" name="email"
+                    placeholder="Пишіть тут">
+                </div>
+              </div>
+              <div class="about-contact__field about-contact__field--full">
+                <label class="about-contact__label" for="about-contact-comment">Коментар</label>
+                <textarea class="about-contact__textarea" id="about-contact-comment" name="comment"
+                  placeholder="Пишіть тут"></textarea>
+              </div>
+              <label class="about-contact__agree">
+                <input class="about-contact__agree-input" type="checkbox" name="agreement" required>
+                <span class="about-contact__agree-text">погоджуюся на обробку персональних даних</span>
+              </label>
+              <div class="about-contact__bottom">
+                <div class="about-contact__bottom-submit">
+                  <button class="about-contact__submit clubs__button" type="submit" form="about-contact-form">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path
+                        d="M3 8.5L11.5 14.5L20 8.5M4 19H20C20.5523 19 21 18.5523 21 18V6C21 5.44772 20.5523 5 20 5H4C3.44772 5 3 5.44772 3 6V18C3 18.5523 3.44772 19 4 19Z"
+                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span>Надіслати</span>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-map" aria-label="Мапа">
+      <div class="contact-map__frame">
+        <iframe class="contact-map__iframe"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2562.9220093879053!2d36.2255706!3d50.031557199999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4127a13534b85807%3A0xc73d04aabbcb91c4!2z0LLRg9C70LjRhtGPINCS0LDRgNGC0L7QstC40YUg0J3QtdCx0LAsIDQ2LCDQpdCw0YDQutGW0LIsINCl0LDRgNC60ZbQstGB0YzQutCwINC-0LHQu9Cw0YHRgtGMLCDQo9C60YDQsNGX0L3QsCwgNjEwMDA!5e0!3m2!1suk!2ssk!4v1781601380507!5m2!1suk!2ssk"
+          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <img class="contact-map__marker" src="./images/point.svg" alt="" aria-hidden="true">
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <a class="footer__logo" href="index.html">
+          <img class="footer__logo-img" src="./images/footer-logo.png" alt="">
+        </a>
+        <div class="footer__socials">
+          <a class="footer__social" href="#">
+            <img src="./images/instagram-white.svg" alt="">
+          </a>
+          <a class="footer__social" href="#">
+            <img src="./images/facebook-white.svg" alt="">
+          </a>
+          <a class="footer__social" href="#">
+            <img src="./images/telegram-white.svg" alt="">
+          </a>
+        </div>
+        <button class="footer__donate">
+          <img src="./images/donate.svg" alt="">
+          <span>Донат</span>
+        </button>
+      </div>
+      <div class="footer__inner">
+        <ul class="footer__list">
+          <p class="footer__list-title">
+            Графік роботи
+          </p>
+          <li class="footer__list-item">
+            <a class="footer__list-link" href="#">Понеділок - п'ятниця <br> 9:00 - 22:00</a>
+          </li>
+          <li class="footer__list-item">
+            <a class="footer__list-link" href="#">Субота <br> 9:00 - 18:00</a>
+          </li>
+          <li class="footer__list-item">
+            <a class="footer__list-link" href="#">Неділя <br>10:00 - 19:00</a>
+          </li>
+        </ul>
+        <ul class="footer__list">
+          <p class="footer__list-title">
+            Про нас
+          </p>
+          <li class="footer__list-item">
+            <a class="footer__list-link" href="about.html#about">Місія</a>
+          </li>
+          <li class="footer__list-item">
+            <a class="footer__list-link" href="about.html#about">Цінності</a>
+          </li>
+          <li class="footer__list-item">
+            <a class="footer__list-link" href="about.html#about">Команда</a>
+          </li>
+          <li class="footer__list-item">
+            <a class="footer__list-link" href="about.html#about">Партнери</a>
+          </li>
+        </ul>
+        <ul class="footer__list">
+          <p class="footer__list-title">
+            Програми
+          </p>
+          <li class="footer__list-item">
+            <a class="footer__list-link" href="clubs.html#programs">Для дорослих</a>
+          </li>
+          <li class="footer__list-item">
+            <a class="footer__list-link" href="clubs.html#programs">Для дітей</a>
+          </li>
+        </ul>
+        <ul class="footer__list">
+          <p class="footer__list-title">
+            Заходи
+          </p>
+        </ul>
+        <ul class="footer__list">
+          <p class="footer__list-title">
+            Оренда
+          </p>
+        </ul>
+        <ul class="footer__list">
+          <p class="footer__list-title">
+            Волонтерська платформа
+          </p>
+          <li class="footer__list-item">
+            <a class="footer__list-link" href="index.html#volunteering">Про волонтерів і проекти</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <div class="footer__bottom-inner">
+          <p class="footer__bottom-text">
+            © 2015 - 2026 - ЄКЦ "Бейт Дан". Всі права захищені
+          </p>
+          <img class="footer__bottom-img" src="./images/footer-copy.png" alt="">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
