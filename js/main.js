@@ -196,7 +196,6 @@
 	updateHeaderScroll()
 	window.addEventListener('scroll', updateHeaderScroll, { passive: true })
 })()
-
 ;(function () {
 	const REVIEWS_BREAKPOINT = 1100
 	const AUTOPLAY_DELAY = 5000
@@ -347,7 +346,6 @@
 	window.addEventListener('resize', update)
 	update()
 })()
-
 ;(function () {
 	const section = document.querySelector('.news')
 	if (!section) return
@@ -391,7 +389,6 @@
 	window.addEventListener('resize', update)
 	update()
 })()
-
 ;(function () {
 	const accordion = document.querySelector('.accordion')
 	if (!accordion) return
@@ -420,5 +417,253 @@
 		header.setAttribute('role', 'button')
 		header.setAttribute('aria-expanded', 'false')
 		btn.setAttribute('tabindex', '-1')
+	})
+})()
+;(function () {
+	const section = document.querySelector('.main--slider')
+	if (!section) return
+
+	const textSlides = [...section.querySelectorAll('.main__slide')]
+	const photoSlides = [...section.querySelectorAll('.main__photos .main__img')]
+
+	if (
+		!textSlides.length ||
+		!photoSlides.length ||
+		textSlides.length !== photoSlides.length
+	) {
+		return
+	}
+
+	const slideCount = textSlides.length
+	const autoplayDelay = Number(section.dataset.autoplay) || 3000
+
+	const getCssDurationMs = (varName, fallback) => {
+		const raw = getComputedStyle(section).getPropertyValue(varName).trim()
+		const seconds = Number.parseFloat(raw)
+		return Number.isFinite(seconds) ? seconds * 1000 : fallback
+	}
+
+	const getTreeGrowMs = () =>
+		getCssDurationMs('--main-tree-grow-duration', 1700)
+	const getTextExitMs = () => getCssDurationMs('--main-exit-duration', 580)
+	const getPhotoTransitionMs = () =>
+		getCssDurationMs('--main-slide-duration', 1300)
+	const getTextEnterMs = () =>
+		getCssDurationMs('--main-slide-duration', 1300) +
+		getCssDurationMs('--main-text-enter-delay', 120)
+
+	let current = 0
+	let timer = null
+	let animating = false
+
+	const prefersReducedMotion = () =>
+		window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+	const isAdaptiveSlider = () =>
+		window.matchMedia('(max-width: 1240px)').matches
+
+	const stopAutoplay = () => {
+		if (timer) clearTimeout(timer)
+		timer = null
+	}
+
+	const scheduleNext = () => {
+		stopAutoplay()
+		if (slideCount < 2 || prefersReducedMotion()) return
+		timer = setTimeout(() => {
+			goTo((current + 1) % slideCount)
+		}, autoplayDelay)
+	}
+
+	const clearMotionClasses = index => {
+		textSlides[index].classList.remove('is-enter', 'is-exit')
+		photoSlides[index].classList.remove('is-enter', 'is-exit')
+	}
+
+	const finishTransition = (prev, next) => {
+		textSlides[prev].classList.remove('is-exit')
+		photoSlides[prev].classList.remove('is-exit')
+		textSlides[next].classList.remove('is-enter')
+		photoSlides[next].classList.remove('is-enter')
+		textSlides[prev].setAttribute('aria-hidden', 'true')
+		photoSlides[prev].setAttribute('aria-hidden', 'true')
+		current = next
+		animating = false
+		scheduleNext()
+	}
+
+	const setSlideState = (index, active) => {
+		textSlides[index].classList.toggle('is-active', active)
+		photoSlides[index].classList.toggle('is-active', active)
+		textSlides[index].setAttribute('aria-hidden', active ? 'false' : 'true')
+		photoSlides[index].setAttribute('aria-hidden', active ? 'false' : 'true')
+	}
+
+	const goTo = next => {
+		if (animating || next === current) return
+
+		const prev = current
+
+		if (prefersReducedMotion()) {
+			clearMotionClasses(prev)
+			clearMotionClasses(next)
+			setSlideState(prev, false)
+			setSlideState(next, true)
+			current = next
+			scheduleNext()
+			return
+		}
+
+		if (isAdaptiveSlider()) {
+			animating = true
+			stopAutoplay()
+			clearMotionClasses(prev)
+			clearMotionClasses(next)
+
+			textSlides[prev].classList.remove('is-active', 'is-enter', 'is-exit')
+			textSlides[prev].setAttribute('aria-hidden', 'true')
+			textSlides[next].classList.add('is-active')
+			textSlides[next].setAttribute('aria-hidden', 'false')
+
+			photoSlides[prev].classList.add('is-exit')
+			photoSlides[prev].classList.remove('is-active')
+			photoSlides[next].classList.add('is-enter')
+			photoSlides[next].setAttribute('aria-hidden', 'false')
+
+			void photoSlides[next].offsetWidth
+
+			requestAnimationFrame(() => {
+				photoSlides[next].classList.add('is-active')
+			})
+
+			window.setTimeout(() => {
+				finishTransition(prev, next)
+			}, getPhotoTransitionMs())
+			return
+		}
+
+		animating = true
+		stopAutoplay()
+		clearMotionClasses(prev)
+		clearMotionClasses(next)
+
+		// 1. Зникає текст — фото лишається
+		textSlides[prev].classList.add('is-exit')
+		textSlides[prev].classList.remove('is-active')
+
+		window.setTimeout(() => {
+			textSlides[prev].classList.remove('is-exit')
+			textSlides[prev].setAttribute('aria-hidden', 'true')
+
+			// 2. Фото і новий текст з'являються одночасно
+			photoSlides[prev].classList.add('is-exit')
+			photoSlides[prev].classList.remove('is-active')
+
+			photoSlides[next].classList.add('is-enter')
+			photoSlides[next].setAttribute('aria-hidden', 'false')
+
+			textSlides[next].classList.add('is-enter')
+			textSlides[next].setAttribute('aria-hidden', 'false')
+
+			void photoSlides[next].offsetWidth
+			void textSlides[next].offsetWidth
+
+			requestAnimationFrame(() => {
+				photoSlides[next].classList.add('is-active')
+				textSlides[next].classList.add('is-active')
+			})
+
+			const enterMs = Math.max(getPhotoTransitionMs(), getTextEnterMs())
+
+			window.setTimeout(() => {
+				finishTransition(prev, next)
+			}, enterMs)
+		}, getTextExitMs())
+	}
+
+	const playInitialEnter = () => {
+		if (prefersReducedMotion()) {
+			setSlideState(0, true)
+			scheduleNext()
+			return
+		}
+
+		if (isAdaptiveSlider()) {
+			animating = true
+			clearMotionClasses(0)
+
+			textSlides[0].classList.add('is-active')
+			textSlides[0].setAttribute('aria-hidden', 'false')
+
+			photoSlides[0].classList.add('is-enter')
+			photoSlides[0].setAttribute('aria-hidden', 'false')
+
+			void photoSlides[0].offsetWidth
+
+			requestAnimationFrame(() => {
+				photoSlides[0].classList.add('is-active')
+			})
+
+			window.setTimeout(() => {
+				photoSlides[0].classList.remove('is-enter')
+				animating = false
+				scheduleNext()
+			}, getPhotoTransitionMs())
+			return
+		}
+
+		animating = true
+		clearMotionClasses(0)
+
+		window.setTimeout(() => {
+			photoSlides[0].classList.add('is-enter')
+			photoSlides[0].setAttribute('aria-hidden', 'false')
+
+			void photoSlides[0].offsetWidth
+
+			requestAnimationFrame(() => {
+				photoSlides[0].classList.add('is-active')
+			})
+
+			window.setTimeout(() => {
+				photoSlides[0].classList.remove('is-enter')
+
+				textSlides[0].classList.add('is-enter')
+				textSlides[0].setAttribute('aria-hidden', 'false')
+
+				void textSlides[0].offsetWidth
+
+				requestAnimationFrame(() => {
+					textSlides[0].classList.add('is-active')
+				})
+
+				window.setTimeout(() => {
+					textSlides[0].classList.remove('is-enter')
+					animating = false
+					scheduleNext()
+				}, getTextEnterMs())
+			}, getPhotoTransitionMs())
+		}, getTreeGrowMs())
+	}
+
+	textSlides.forEach((slide, index) => {
+		slide.setAttribute('aria-hidden', index === 0 ? 'false' : 'true')
+	})
+	photoSlides.forEach(slide => {
+		slide.setAttribute('aria-hidden', 'true')
+	})
+
+	playInitialEnter()
+
+	section.addEventListener('mouseenter', stopAutoplay)
+	section.addEventListener('mouseleave', scheduleNext)
+	section.addEventListener('focusin', stopAutoplay)
+	section.addEventListener('focusout', event => {
+		if (!section.contains(event.relatedTarget)) scheduleNext()
+	})
+
+	document.addEventListener('visibilitychange', () => {
+		if (document.hidden) stopAutoplay()
+		else scheduleNext()
 	})
 })()

@@ -1,0 +1,11 @@
+<svg width="280" height="88" viewBox="0 0 280 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <text x="0" y="34" fill="#A9C337" font-family="Montserrat, Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="1">LIQPAY</text>
+  <path d="M132 24L144 32L132 40" stroke="#A9C337" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M148 24L160 32L148 40" stroke="#A9C337" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="0" y="78" fill="#1A1F71" font-family="Montserrat, Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="1">VISA</text>
+  <circle cx="118" cy="68" r="14" fill="#EB001B"/>
+  <circle cx="132" cy="68" r="14" fill="#F79E1B" fill-opacity="0.95"/>
+  <circle cx="170" cy="68" r="18" fill="#111111"/>
+  <circle cx="170" cy="68" r="14" stroke="#A9C337" stroke-width="3"/>
+  <text x="162" y="74" fill="white" font-family="Montserrat, Arial, sans-serif" font-size="14" font-weight="700">24</text>
+</svg>

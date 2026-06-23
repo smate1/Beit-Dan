@@ -91,21 +91,63 @@
       </div>
     </div>
   </header>
-  <section class="main">
+  <section class="main main--slider" aria-roledescription="carousel" data-autoplay="3000">
     <div class="container">
       <div class="main__inner">
-        <div class="main__content">
-          <h1 class="main__title">
-            Єврейський Культурний
-            Центр “Бейт Дан”
-          </h1>
-          <p class="main__text">
-            Общинний єврейський культурний центр
-            «Бейт Дан» – є центром єврейського життя
-            м. Харкова протягом більше 20 років.
-          </p>
+        <div class="main__content" aria-live="polite">
+          <div class="main__slides">
+            <article class="main__slide">
+              <h1 class="main__title">
+                Єврейський Культурний
+                Центр “Бейт Дан”
+              </h1>
+              <p class="main__text">
+                Общинний єврейський культурний центр
+                «Бейт Дан» – є центром єврейського життя
+                м. Харкова протягом більше 20 років.
+              </p>
+            </article>
+            <article class="main__slide main__slide--wide main__slide--directions">
+              <h1 class="main__title">
+                Напрямки Діяльності
+              </h1>
+              <ul class="main__list">
+                <li class="main__list-item">
+                  Заходи по збереженню єврейських традицій і культури.
+                </li>
+                <li class="main__list-item">
+                  Освітні програми, студії, гуртки і свята для дітей (від 1,5 до 12 років)
+                </li>
+                <li class="main__list-item">
+                  Програми і заходи для підлітків та молоді.
+                </li>
+                <li class="main__list-item">
+                  Програми та заходи для дорослих.
+                </li>
+                <li class="main__list-item">
+                  Волонтерська діяльність
+                </li>
+              </ul>
+            </article>
+            <article class="main__slide main__slide--wide main__slide--bottom">
+              <h1 class="main__title">
+                Наша Місія
+              </h1>
+              <p class="main__text">
+                Платформа для зміцнення і розвитку єврейської громади міста
+                Харків і регіону. Збереження єврейської культури і традицій.
+              </p>
+            </article>
+          </div>
         </div>
-        <img class="main__img" src="./images/main-2.png" alt="">
+        <div class="main__media">
+          <img class="main__tree" src="./images/main-tree.svg" alt="" aria-hidden="true">
+          <div class="main__photos">
+            <img class="main__img" src="./images/main-slide-1.png" alt="">
+            <img class="main__img" src="./images/main-slide-1.png" alt="">
+            <img class="main__img" src="./images/main-slide-1.png" alt="">
+          </div>
+        </div>
       </div>
     </div>
   </section>
