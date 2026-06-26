@@ -331,6 +331,12 @@
 		else disable()
 	}
 
+	const resume = () => {
+		if (!enabled) return
+		goTo(current)
+		startAutoplay()
+	}
+
 	section.addEventListener('mouseenter', stopAutoplay)
 	section.addEventListener('mouseleave', startAutoplay)
 	section.addEventListener('focusin', stopAutoplay)
@@ -340,7 +346,11 @@
 
 	document.addEventListener('visibilitychange', () => {
 		if (document.hidden) stopAutoplay()
-		else startAutoplay()
+		else resume()
+	})
+
+	window.addEventListener('pageshow', event => {
+		if (event.persisted) resume()
 	})
 
 	window.addEventListener('resize', update)
@@ -386,7 +396,17 @@
 		update()
 	})
 
+	const refresh = () => {
+		requestAnimationFrame(update)
+	}
+
 	window.addEventListener('resize', update)
+	window.addEventListener('pageshow', event => {
+		if (event.persisted) refresh()
+	})
+	document.addEventListener('visibilitychange', () => {
+		if (!document.hidden) refresh()
+	})
 	update()
 })()
 ;(function () {
@@ -455,12 +475,38 @@
 	let current = 0
 	let timer = null
 	let animating = false
+	let runId = 0
+	const pendingTimers = new Set()
 
 	const prefersReducedMotion = () =>
 		window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
 	const isAdaptiveSlider = () =>
 		window.matchMedia('(max-width: 1240px)').matches
+
+	const cancelPendingTransitions = () => {
+		runId += 1
+		pendingTimers.forEach(id => clearTimeout(id))
+		pendingTimers.clear()
+	}
+
+	const after = (ms, fn) => {
+		const id = runId
+		const timerId = window.setTimeout(() => {
+			pendingTimers.delete(timerId)
+			if (id !== runId) return
+			fn()
+		}, ms)
+		pendingTimers.add(timerId)
+	}
+
+	const nextFrame = fn => {
+		const id = runId
+		requestAnimationFrame(() => {
+			if (id !== runId) return
+			fn()
+		})
+	}
 
 	const stopAutoplay = () => {
 		if (timer) clearTimeout(timer)
@@ -505,6 +551,7 @@
 		const prev = current
 
 		if (prefersReducedMotion()) {
+			cancelPendingTransitions()
 			clearMotionClasses(prev)
 			clearMotionClasses(next)
 			setSlideState(prev, false)
@@ -513,6 +560,8 @@
 			scheduleNext()
 			return
 		}
+
+		cancelPendingTransitions()
 
 		if (isAdaptiveSlider()) {
 			animating = true
@@ -532,13 +581,13 @@
 
 			void photoSlides[next].offsetWidth
 
-			requestAnimationFrame(() => {
+			nextFrame(() => {
 				photoSlides[next].classList.add('is-active')
 			})
 
-			window.setTimeout(() => {
+			after(getPhotoTransitionMs(), () => {
 				finishTransition(prev, next)
-			}, getPhotoTransitionMs())
+			})
 			return
 		}
 
@@ -551,7 +600,7 @@
 		textSlides[prev].classList.add('is-exit')
 		textSlides[prev].classList.remove('is-active')
 
-		window.setTimeout(() => {
+		after(getTextExitMs(), () => {
 			textSlides[prev].classList.remove('is-exit')
 			textSlides[prev].setAttribute('aria-hidden', 'true')
 
@@ -568,17 +617,17 @@
 			void photoSlides[next].offsetWidth
 			void textSlides[next].offsetWidth
 
-			requestAnimationFrame(() => {
+			nextFrame(() => {
 				photoSlides[next].classList.add('is-active')
 				textSlides[next].classList.add('is-active')
 			})
 
 			const enterMs = Math.max(getPhotoTransitionMs(), getTextEnterMs())
 
-			window.setTimeout(() => {
+			after(enterMs, () => {
 				finishTransition(prev, next)
-			}, enterMs)
-		}, getTextExitMs())
+			})
+		})
 	}
 
 	const playInitialEnter = () => {
@@ -587,6 +636,8 @@
 			scheduleNext()
 			return
 		}
+
+		cancelPendingTransitions()
 
 		if (isAdaptiveSlider()) {
 			animating = true
@@ -600,32 +651,32 @@
 
 			void photoSlides[0].offsetWidth
 
-			requestAnimationFrame(() => {
+			nextFrame(() => {
 				photoSlides[0].classList.add('is-active')
 			})
 
-			window.setTimeout(() => {
+			after(getPhotoTransitionMs(), () => {
 				photoSlides[0].classList.remove('is-enter')
 				animating = false
 				scheduleNext()
-			}, getPhotoTransitionMs())
+			})
 			return
 		}
 
 		animating = true
 		clearMotionClasses(0)
 
-		window.setTimeout(() => {
+		after(getTreeGrowMs(), () => {
 			photoSlides[0].classList.add('is-enter')
 			photoSlides[0].setAttribute('aria-hidden', 'false')
 
 			void photoSlides[0].offsetWidth
 
-			requestAnimationFrame(() => {
+			nextFrame(() => {
 				photoSlides[0].classList.add('is-active')
 			})
 
-			window.setTimeout(() => {
+			after(getPhotoTransitionMs(), () => {
 				photoSlides[0].classList.remove('is-enter')
 
 				textSlides[0].classList.add('is-enter')
@@ -633,17 +684,17 @@
 
 				void textSlides[0].offsetWidth
 
-				requestAnimationFrame(() => {
+				nextFrame(() => {
 					textSlides[0].classList.add('is-active')
 				})
 
-				window.setTimeout(() => {
+				after(getTextEnterMs(), () => {
 					textSlides[0].classList.remove('is-enter')
 					animating = false
 					scheduleNext()
-				}, getTextEnterMs())
-			}, getPhotoTransitionMs())
-		}, getTreeGrowMs())
+				})
+			})
+		})
 	}
 
 	textSlides.forEach((slide, index) => {
@@ -652,6 +703,26 @@
 	photoSlides.forEach(slide => {
 		slide.setAttribute('aria-hidden', 'true')
 	})
+
+	const syncSlideState = () => {
+		cancelPendingTransitions()
+		animating = false
+		stopAutoplay()
+
+		textSlides.forEach((slide, index) => {
+			clearMotionClasses(index)
+			slide.classList.remove('is-active')
+			photoSlides[index].classList.remove('is-active', 'is-enter', 'is-exit')
+		})
+
+		void section.offsetWidth
+
+		textSlides.forEach((slide, index) => {
+			setSlideState(index, index === current)
+		})
+
+		scheduleNext()
+	}
 
 	playInitialEnter()
 
@@ -663,7 +734,15 @@
 	})
 
 	document.addEventListener('visibilitychange', () => {
-		if (document.hidden) stopAutoplay()
-		else scheduleNext()
+		if (document.hidden) {
+			stopAutoplay()
+			cancelPendingTransitions()
+		} else {
+			syncSlideState()
+		}
+	})
+
+	window.addEventListener('pageshow', event => {
+		if (event.persisted) syncSlideState()
 	})
 })()
