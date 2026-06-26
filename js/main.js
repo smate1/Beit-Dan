@@ -746,3 +746,66 @@
 		if (event.persisted) syncSlideState()
 	})
 })()
+
+;(function () {
+	const customAmount = document.querySelector('.help__amount--wide')
+	if (!customAmount) return
+
+	const customRadio = customAmount.querySelector('.help__amount-input-radio')
+	const customInput = customAmount.querySelector('.help__amount-input-text')
+	const presetRadios = document.querySelectorAll(
+		'input[name="help-amount"]:not([value="custom"])',
+	)
+
+	if (!customRadio || !customInput) return
+
+	const customField = customAmount.querySelector('.help__amount-custom')
+
+	const updateValueState = () => {
+		customAmount.classList.toggle('has-value', customInput.value.length > 0)
+	}
+
+	const selectCustom = () => {
+		customRadio.checked = true
+	}
+
+	customInput.addEventListener('focus', () => {
+		customAmount.classList.add('is-focused')
+		selectCustom()
+	})
+
+	customInput.addEventListener('blur', () => {
+		customAmount.classList.remove('is-focused')
+	})
+
+	customInput.addEventListener('input', () => {
+		const digits = customInput.value.replace(/\D/g, '')
+		if (customInput.value !== digits) customInput.value = digits
+		updateValueState()
+		selectCustom()
+	})
+
+	customInput.addEventListener('paste', event => {
+		event.preventDefault()
+		const digits = (event.clipboardData?.getData('text') || '').replace(/\D/g, '')
+		if (!digits) return
+		const start = customInput.selectionStart ?? customInput.value.length
+		const end = customInput.selectionEnd ?? customInput.value.length
+		customInput.value =
+			customInput.value.slice(0, start) + digits + customInput.value.slice(end)
+		updateValueState()
+		selectCustom()
+	})
+
+	customField?.addEventListener('click', () => {
+		customInput.focus()
+	})
+
+	presetRadios.forEach(radio => {
+		radio.addEventListener('change', () => {
+			if (!radio.checked) return
+			customInput.value = ''
+			updateValueState()
+		})
+	})
+})()

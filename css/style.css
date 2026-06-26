@@ -9211,6 +9211,92 @@ embed-place-card-element {
 .help__amount--wide {
 	grid-column: 1 / -1;
 	width: 100%;
+	padding: 10px 63px;
+	cursor: text;
+	background: #fff;
+	color: var(--Dark-green, #054e05);
+}
+
+.help__amount.help__amount--wide:has(.help__amount-input-radio:checked) {
+	background: #fff;
+	color: var(--Dark-green, #054e05);
+}
+
+.help__amount.help__amount--wide:has(.help__amount-input-radio:checked):hover {
+	background: #ebf4ee;
+	box-shadow: 0 2px 10px rgba(5, 78, 5, 0.12);
+}
+
+.help__amount-custom {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	min-height: 44px;
+	position: relative;
+	gap: 0;
+}
+
+.help__amount-placeholder {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: inherit;
+	pointer-events: none;
+}
+
+.help__amount--wide.is-focused .help__amount-placeholder,
+.help__amount--wide.has-value .help__amount-placeholder {
+	display: none;
+}
+
+.help__amount-input-text {
+	flex: 0 0 0;
+	width: 0;
+	min-width: 0;
+	border: none;
+	background: transparent;
+	color: inherit;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: inherit;
+	text-align: center;
+	padding: 0;
+	opacity: 0;
+	pointer-events: auto;
+	field-sizing: content;
+}
+
+.help__amount--wide.is-focused .help__amount-input-text,
+.help__amount--wide.has-value .help__amount-input-text {
+	flex: 0 0 auto;
+	width: auto;
+	min-width: 1ch;
+	opacity: 1;
+}
+
+.help__amount--wide.is-focused .help__amount-custom,
+.help__amount--wide.has-value .help__amount-custom {
+	gap: 6px;
+}
+
+.help__amount-input-text:focus {
+	outline: none;
+}
+
+.help__amount-suffix {
+	display: none;
+	flex-shrink: 0;
+	color: inherit;
+	pointer-events: none;
+}
+
+.help__amount--wide.is-focused .help__amount-suffix,
+.help__amount--wide.has-value .help__amount-suffix {
+	display: inline;
 }
 
 .help__amount-input-radio {
@@ -9748,10 +9834,6 @@ embed-place-card-element {
 		font-size: clamp(15px, 1.6vw, 20px);
 		line-height: 1.35;
 		border-radius: clamp(14px, 1.45vw, 16px);
-	}
-
-	.help__amount--wide .help__amount-text {
-		white-space: normal;
 	}
 
 	.help__content {

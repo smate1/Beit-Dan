@@ -132,10 +132,15 @@
                 <input class="help__amount-input-radio" type="radio" name="help-amount" value="500">
                 <span class="help__amount-text">500 грн.</span>
               </label>
-              <label class="help__amount help__amount--wide">
+              <div class="help__amount help__amount--wide">
                 <input class="help__amount-input-radio" type="radio" name="help-amount" value="custom">
-                <span class="help__amount-text">Інша сума грн.</span>
-              </label>
+                <div class="help__amount-custom">
+                  <span class="help__amount-placeholder" aria-hidden="true">Інша сума грн.</span>
+                  <input class="help__amount-input-text" type="text" inputmode="numeric" pattern="[0-9]*"
+                    name="help-amount-custom" aria-label="Інша сума в гривнях" autocomplete="off">
+                  <span class="help__amount-suffix">грн.</span>
+                </div>
+              </div>
             </fieldset>
           </div>
           <div class="help__content">
